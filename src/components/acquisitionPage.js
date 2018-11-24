@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function HomePage(props) {
+export default function AcquisitionPage(props) {
     return (
       <div id="acquisitionPage">
         <h2>Acquisition Page Header</h2>
@@ -8,16 +8,16 @@ export default function HomePage(props) {
 
         <form>
           <label>Label</label>
-          <input>
+          <input />
 
           <label>Label</label>
-          <input>
+          <input />
 
           <label>Label</label>
-          <input>
+          <input />
 
           <label>Label</label>
-          <input>
+          <input />
 
           <button>Search</button>
         </form>

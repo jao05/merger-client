@@ -9,16 +9,16 @@ export default function ExpertPage(props) {
 
         <form>
           <label>Label</label>
-          <input>
+          <input />
 
           <label>Label</label>
-          <input>
+          <input />
 
           <label>Label</label>
-          <input>
+          <input />
 
           <label>Label</label>
-          <input>
+          <input />
 
           <button>Search</button>
         </form>
@@ -26,7 +26,7 @@ export default function ExpertPage(props) {
         <div id="selectExpertSection">
           <p>Select an Expert...</p>
           <form>
-            <input type="radio">
+            <input type="radio" />
             <button>Choose</button>
           </form>
         </div>

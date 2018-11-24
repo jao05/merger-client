@@ -10,7 +10,7 @@ export function NavBar(props) {
 
       	<p>Signed in as {props.user.name}</p>
 
-      	<button>Log Out</button>
+      	<button>Sign Out</button>
       </nav>
     );
 }

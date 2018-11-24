@@ -8,16 +8,16 @@ export default function MergerPage(props) {
 
         <form>
           <label>Label</label>
-          <input>
+          <input/>
 
           <label>Label</label>
-          <input>
+          <input/>
 
           <label>Label</label>
-          <input>
+          <input/>
 
           <label>Label</label>
-          <input>
+          <input/>
 
           <button>Search</button>
         </form>
