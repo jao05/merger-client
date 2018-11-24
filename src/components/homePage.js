@@ -1,4 +1,5 @@
 import React from 'react';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
 export default function HomePage(props) {
     return (
@@ -6,16 +7,16 @@ export default function HomePage(props) {
         <h2>Home Page Header</h2>
         
         <p>Description</p>
-        <button>Merger</button>
+        <Link to="/merger"><button>Merger</button></Link>
 
         <p>Description</p>
-        <button>Acquisition</button>
+        <Link to="/acquisition"><button>Acquisition</button></Link>
 
         <p>Description</p>
-        <button>Sell</button>
+        <Link to="/sell"><button>Sell</button></Link>
 
         <p>Found interested party? Now, find an expert to help...</p>
-        <button>Find an Expert</button>
+        <Link to="/expert"><button>Find an Expert</button></Link>
       </div>
     );
 }

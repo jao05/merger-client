@@ -1,6 +1,24 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
-export default function MergerPage(props) {
+export function MergerPage(props) {
+    
+    function demoShowComps(event) {
+
+      event.preventDefault();
+
+      const companies = props.companies.map(company => {
+        console.log(company);
+        return (
+
+            `<div>${company.name} ${company.location} ${company.industry} ${company.profile}</div>`
+          ); 
+      });
+      console.log(companies)
+      document.getElementById("potentialMergComps").innerHTML = companies;
+
+    }
+
     return (
       <div id="mergerPage">
         <h2>Merger Page Header</h2>
@@ -19,7 +37,7 @@ export default function MergerPage(props) {
           <label>Label</label>
           <input/>
 
-          <button>Search</button>
+          <button onClick={demoShowComps}>Search</button>
         </form>
 
         <div id="potentialMergComps">Potential Merge Comps</div>
@@ -27,3 +45,10 @@ export default function MergerPage(props) {
       </div>
     );
 }
+
+export const mapStateToProps = state => ({
+    
+    companies: state.companies
+});
+
+export default connect(mapStateToProps)(MergerPage);
