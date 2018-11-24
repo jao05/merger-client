@@ -22,7 +22,7 @@ export function MergerPage(props) {
     return (
       <div id="mergerPage">
         <h2>Merger Page Header</h2>
-        <p>Enter criteria...</p>
+        <p>Enter search criteria to find companies that are interested in merging</p>
 
         <form>
           <label>Label</label>

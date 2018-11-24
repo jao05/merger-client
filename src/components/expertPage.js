@@ -4,7 +4,7 @@ export default function ExpertPage(props) {
     return (
       <div id="expertPage">
         <h2>Expert Page Header</h2>
-        <p>Get expert help...</p>
+        <p>Get expert help to close your deal.</p>
         <p>Enter criteria...</p>
 
         <form>

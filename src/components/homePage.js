@@ -6,16 +6,16 @@ export default function HomePage(props) {
       <div id="homePage">
         <h2>Home Page Header</h2>
         
-        <p>Description</p>
+        <p>Find companies that are interested in merging.</p>
         <Link to="/merger"><button>Merger</button></Link>
 
-        <p>Description</p>
+        <p>Find companies that are interested in being acquired.</p>
         <Link to="/acquisition"><button>Acquisition</button></Link>
 
-        <p>Description</p>
+        <p>Find companies that are interested in purchasing other companies.</p>
         <Link to="/sell"><button>Sell</button></Link>
 
-        <p>Found interested party? Now, find an expert to help...</p>
+        <p>Found an interested party? Now, find an experts to help close the deal.</p>
         <Link to="/expert"><button>Find an Expert</button></Link>
       </div>
     );
