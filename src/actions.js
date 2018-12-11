@@ -53,7 +53,7 @@ export const fetchAcquisitionCompanies = () => dispatch => {
 };
 
 
-// 3b. Fetch Acquistion Success
+// 3b. Fetch Acquisition Success
 export const FETCH_ACQUISITION_COMPANIES_SUCCESS = 'FETCH_ACQUISITION_COMPANIES_SUCCESS';
 export const fetchAcquisitionCompaniesSuccess = companies => ({
     type: FETCH_ACQUISITION_COMPANIES_SUCCESS,
@@ -61,23 +61,42 @@ export const fetchAcquisitionCompaniesSuccess = companies => ({
 });
 
 
-// 3c. Fetch Acquistion Error
+// 3c. Fetch Acquisition Error
 export const FETCH_ACQUISITION_COMPANIES_ERROR = 'FETCH_ACQUISITION_COMPANIES_ERROR';
 export const fetchAcquisitionCompaniesError = errMsg => ({
     type: FETCH_ACQUISITION_COMPANIES_ERROR,
     errMsg
 });
 
-/*
-// 4. Action creator to fetch companies interested in buying other companies (async)
-export const fetchBoard = () => dispatch => {
-    fetch(`${API_BASE_URL}/board`).then(res => {
+
+// 4a. Action creator to fetch companies interested in buying other companies (async)
+export const fetchSellCompanies = () => dispatch => {
+    fetch(`${API_BASE_URL}/userCompany`).then(res => {
         if (!res.ok) {
             return Promise.reject(res.statusText);
         }
         return res.json();
-    }).then(board => {
-        dispatch(fetchBoardSuccess(board));
+    })
+    .then(companies => {
+        dispatch(fetchSellCompaniesSuccess(companies));
+    })
+    .catch(err => {
+        dispatch(fetchSellCompaniesError(err));
     });
 };
-*/
+
+
+// 4b. Fetch Sell Success
+export const FETCH_SELL_COMPANIES_SUCCESS = 'FETCH_SELL_COMPANIES_SUCCESS';
+export const fetchSellCompaniesSuccess = companies => ({
+    type: FETCH_SELL_COMPANIES_SUCCESS,
+    companies
+});
+
+
+// 4c. Fetch Sell Error
+export const FETCH_SELL_COMPANIES_ERROR = 'FETCH_SELL_COMPANIES_ERROR';
+export const fetchSellCompaniesError = errMsg => ({
+    type: FETCH_SELL_COMPANIES_ERROR,
+    errMsg
+});
