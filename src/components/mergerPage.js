@@ -26,10 +26,20 @@ export function MergerPage(props) {
 
         <form>
           <label>Industry</label>
-          <input/>
+          <select>
+            <option value="Technology">Technology</option>
+            <option value="Financial">Financial</option>
+            <option value="Beauty">Beauty</option>
+            <option value="Health">Health</option>
+          </select>
 
           <label>Location</label>
-          <input/>          
+          <select>
+            <option value="New York">New York</option>
+            <option value="Atlanta">Atlanta</option>
+            <option value="Memphis">Memphis</option>
+            <option value="San Francisco">San Francisco</option>
+          </select>          
 
           <button onClick={demoShowComps}>Search</button>
         </form>
