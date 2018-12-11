@@ -8,7 +8,7 @@ export function MergerPage(props) {
       event.preventDefault();
 
       const companies = props.companies.map(company => {
-        console.log(company);
+        console.log(company); // *****************
         return (
 
             `<div>${company.name} ${company.location} ${company.industry} ${company.profile}</div>`
@@ -44,8 +44,8 @@ export function MergerPage(props) {
           <button onClick={demoShowComps}>Search</button>
         </form>
 
-        <div id="potentialMergComps">Potential Merge Comps</div>
-        <div id="potentialMergCompDetail">Company Details</div>
+        <div id="potentialMergComps">Potential Merge Comps Placeholder</div>
+        <div id="potentialMergCompDetail">Company Details Placeholder</div>
       </div>
     );
 }
