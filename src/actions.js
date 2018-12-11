@@ -1,6 +1,6 @@
 import {API_BASE_URL} from '../config';
 
-// 1. Update profile
+// 1. Update profile************
 
 
 // 2a. Action creator to fetch companies interested in merging (async)
@@ -98,5 +98,38 @@ export const fetchSellCompaniesSuccess = companies => ({
 export const FETCH_SELL_COMPANIES_ERROR = 'FETCH_SELL_COMPANIES_ERROR';
 export const fetchSellCompaniesError = errMsg => ({
     type: FETCH_SELL_COMPANIES_ERROR,
+    errMsg
+});
+
+
+// 5a. Action creator to fetch expert companies
+export const fetchExpertCompanies = () => dispatch => {
+    fetch(`${API_BASE_URL}/experts`).then(res => {
+        if (!res.ok) {
+            return Promise.reject(res.statusText);
+        }
+        return res.json();
+    })
+    .then(companies => {
+        dispatch(fetchExpertCompaniesSuccess(companies));
+    })
+    .catch(err => {
+        dispatch(fetchExpertCompaniesError(err));
+    });
+};
+
+
+// 5b. Fetch Expert Success
+export const FETCH_EXPERT_COMPANIES_SUCCESS = 'FETCH_EXPERT_COMPANIES_SUCCESS';
+export const fetchExpertCompaniesSuccess = companies => ({
+    type: FETCH_EXPERT_COMPANIES_SUCCESS,
+    companies
+});
+
+
+// 5c. Fetch Expert Error
+export const FETCH_EXPERT_COMPANIES_ERROR = 'FETCH_EXPERT_COMPANIES_ERROR';
+export const fetchExpertCompaniesError = errMsg => ({
+    type: FETCH_EXPERT_COMPANIES_ERROR,
     errMsg
 });
