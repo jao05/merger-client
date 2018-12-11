@@ -25,17 +25,11 @@ export function MergerPage(props) {
         <p>Enter search criteria to find companies that are interested in merging.</p>
 
         <form>
-          <label>Label</label>
+          <label>Industry</label>
           <input/>
 
-          <label>Label</label>
-          <input/>
-
-          <label>Label</label>
-          <input/>
-
-          <label>Label</label>
-          <input/>
+          <label>Location</label>
+          <input/>          
 
           <button onClick={demoShowComps}>Search</button>
         </form>

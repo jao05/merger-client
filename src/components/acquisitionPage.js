@@ -7,17 +7,11 @@ export default function AcquisitionPage(props) {
         <p>Enter search criteria to find companies that are interested in being acquired.</p>
 
         <form>
-          <label>Label</label>
+          <label>Industry</label>
           <input />
 
-          <label>Label</label>
-          <input />
-
-          <label>Label</label>
-          <input />
-
-          <label>Label</label>
-          <input />
+          <label>Location</label>
+          <input />          
 
           <button>Search</button>
         </form>

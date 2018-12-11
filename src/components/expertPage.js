@@ -8,17 +8,17 @@ export default function ExpertPage(props) {
         <p>Enter criteria...</p>
 
         <form>
-          <label>Label</label>
-          <input />
+          <label>Type</label>
+          <select>
+            <option value="Legal">Legal</option>
+            <option value="Financial">Financial</option>
+          </select>
 
-          <label>Label</label>
-          <input />
-
-          <label>Label</label>
-          <input />
-
-          <label>Label</label>
-          <input />
+          <label>Location</label>
+          <select>
+            <option value="New York">New York</option>
+            <option value="Boston">Boston</option>
+          </select>          
 
           <button>Search</button>
         </form>
