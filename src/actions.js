@@ -1,6 +1,8 @@
 import {API_BASE_URL} from '../config';
 
-// All CRUD functions???
+// 1. Action creators for All CRUD functions for ALL endpoints???
+// 2. Confirm that fetch is GET
+// 3. Should remaining CRUD functions follow same convention (asyn, success, error action creators)
 
 // 1a. Action creator to fetch companies interested in merging (async)
 export const fetchMergerCompanies = () => dispatch => {
@@ -134,7 +136,7 @@ export const fetchExpertCompaniesError = errMsg => ({
 });
 
 
-// 5a. Add userCompany
+// 5a. Add userCompany********************************************
 export const ADD_USER_COMPANY = 'ADD_USER_COMPANY';
 export const addUserCompany = company => ({
     type: ADD_USER_COMPANY,
@@ -155,28 +157,4 @@ export const DELETE_USER_COMPANY = 'DELETE_USER_COMPANY';
 export const deleteUserCompany = company => ({
     type: DELETE_USER_COMPANY,
     company
-});
-
-
-// 6a. Add expert
-export const ADD_EXPERT = 'ADD_EXPERT';
-export const addExpert = expert => ({
-    type: ADD_EXPERT,
-    expert
-});
-
-
-// 6b. Update expert
-export const UPDATE_EXPERT = 'UPDATE_EXPERT';
-export const updateExpert = expert => ({
-    type: UPDATE_EXPERT,
-    expert
-});
-
-
-// 6c. Delete expert
-export const DELETE_EXPERT = 'DELETE_EXPERT';
-export const deleteExpert = expert => ({
-    type: DELETE_EXPERT,
-    expert
 });
