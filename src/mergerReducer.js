@@ -6,6 +6,7 @@ const initialState = {};
 
 export const mergerReducer = (state=initialState, action) => {
     
+    /*
     if (action.type === ADD_ITEM) {
         return Object.assign({}, state, {
             
@@ -88,48 +89,28 @@ export const mergerReducer = (state=initialState, action) => {
             
         });
     }
+    */
 
 
-    if (action.type === ADD_ITEM) {
+    if (action.type === ADD_USER_COMPANY) {
         return Object.assign({}, state, {
             
         });
     }
 
 
-    if (action.type === ADD_ITEM) {
+    if (action.type === UPDATE_USER_COMPANY) {
         return Object.assign({}, state, {
             
         });
     }
 
 
-    if (action.type === ADD_ITEM) {
+    if (action.type === DELETE_USER_COMPANY) {
         return Object.assign({}, state, {
             
         });
-    }
-
-
-    if (action.type === ADD_ITEM) {
-        return Object.assign({}, state, {
-            
-        });
-    }
-
-
-    if (action.type === ADD_ITEM) {
-        return Object.assign({}, state, {
-            
-        });
-    }
-
-
-    if (action.type === ADD_ITEM) {
-        return Object.assign({}, state, {
-            
-        });
-    }
+    }    
 
     return state;
 };
