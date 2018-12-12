@@ -143,7 +143,19 @@ export const addUserCompany = company => ({
 
 
 // Update userCompany
+export const UPDATE_USER_COMPANY = 'UPDATE_USER_COMPANY';
+export const updateUserCompany = company => ({
+    type: UPDATE_USER_COMPANY,
+    company
+});
+
+
 // Delete userCompany
+export const DELETE_USER_COMPANY = 'DELETE_USER_COMPANY';
+export const deleteUserCompany = company => ({
+    type: DELETE_USER_COMPANY,
+    company
+});
 
 
 // Add expert
