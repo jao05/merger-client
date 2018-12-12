@@ -1,9 +1,8 @@
 import {API_BASE_URL} from '../config';
 
-// 1. Update profile************
+// All CRUD functions???
 
-
-// 2a. Action creator to fetch companies interested in merging (async)
+// 1a. Action creator to fetch companies interested in merging (async)
 export const fetchMergerCompanies = () => dispatch => {
     fetch(`${API_BASE_URL}/userCompany`).then(res => {
         if (!res.ok) {
@@ -20,7 +19,7 @@ export const fetchMergerCompanies = () => dispatch => {
 };
 
 
-// 2b. Fetch Merger Success
+// 1b. Fetch Merger Success
 export const FETCH_MERGER_COMPANIES_SUCCESS = 'FETCH_MERGER_COMPANIES_SUCCESS';
 export const fetchMergerCompaniesSuccess = companies => ({
     type: FETCH_MERGER_COMPANIES_SUCCESS,
@@ -28,7 +27,7 @@ export const fetchMergerCompaniesSuccess = companies => ({
 });
 
 
-// 2c. Fetch Merger Error
+// 1c. Fetch Merger Error
 export const FETCH_MERGER_COMPANIES_ERROR = 'FETCH_MERGER_COMPANIES_ERROR';
 export const fetchMergerCompaniesError = errMsg => ({
     type: FETCH_MERGER_COMPANIES_ERROR,
@@ -36,7 +35,7 @@ export const fetchMergerCompaniesError = errMsg => ({
 });
 
 
-// 3a. Action creator to fetch companies interested in being acquired (async)
+// 2a. Action creator to fetch companies interested in being acquired (async)
 export const fetchAcquisitionCompanies = () => dispatch => {
     fetch(`${API_BASE_URL}/userCompany`).then(res => {
         if (!res.ok) {
@@ -53,7 +52,7 @@ export const fetchAcquisitionCompanies = () => dispatch => {
 };
 
 
-// 3b. Fetch Acquisition Success
+// 2b. Fetch Acquisition Success
 export const FETCH_ACQUISITION_COMPANIES_SUCCESS = 'FETCH_ACQUISITION_COMPANIES_SUCCESS';
 export const fetchAcquisitionCompaniesSuccess = companies => ({
     type: FETCH_ACQUISITION_COMPANIES_SUCCESS,
@@ -61,7 +60,7 @@ export const fetchAcquisitionCompaniesSuccess = companies => ({
 });
 
 
-// 3c. Fetch Acquisition Error
+// 2c. Fetch Acquisition Error
 export const FETCH_ACQUISITION_COMPANIES_ERROR = 'FETCH_ACQUISITION_COMPANIES_ERROR';
 export const fetchAcquisitionCompaniesError = errMsg => ({
     type: FETCH_ACQUISITION_COMPANIES_ERROR,
@@ -69,7 +68,7 @@ export const fetchAcquisitionCompaniesError = errMsg => ({
 });
 
 
-// 4a. Action creator to fetch companies interested in buying other companies (async)
+// 3a. Action creator to fetch companies interested in buying other companies (async)
 export const fetchSellCompanies = () => dispatch => {
     fetch(`${API_BASE_URL}/userCompany`).then(res => {
         if (!res.ok) {
@@ -86,7 +85,7 @@ export const fetchSellCompanies = () => dispatch => {
 };
 
 
-// 4b. Fetch Sell Success
+// 3b. Fetch Sell Success
 export const FETCH_SELL_COMPANIES_SUCCESS = 'FETCH_SELL_COMPANIES_SUCCESS';
 export const fetchSellCompaniesSuccess = companies => ({
     type: FETCH_SELL_COMPANIES_SUCCESS,
@@ -94,7 +93,7 @@ export const fetchSellCompaniesSuccess = companies => ({
 });
 
 
-// 4c. Fetch Sell Error
+// 3c. Fetch Sell Error
 export const FETCH_SELL_COMPANIES_ERROR = 'FETCH_SELL_COMPANIES_ERROR';
 export const fetchSellCompaniesError = errMsg => ({
     type: FETCH_SELL_COMPANIES_ERROR,
@@ -102,7 +101,7 @@ export const fetchSellCompaniesError = errMsg => ({
 });
 
 
-// 5a. Action creator to fetch expert companies
+// 4a. Action creator to fetch expert companies
 export const fetchExpertCompanies = () => dispatch => {
     fetch(`${API_BASE_URL}/experts`).then(res => {
         if (!res.ok) {
@@ -119,7 +118,7 @@ export const fetchExpertCompanies = () => dispatch => {
 };
 
 
-// 5b. Fetch Expert Success
+// 4b. Fetch Expert Success
 export const FETCH_EXPERT_COMPANIES_SUCCESS = 'FETCH_EXPERT_COMPANIES_SUCCESS';
 export const fetchExpertCompaniesSuccess = companies => ({
     type: FETCH_EXPERT_COMPANIES_SUCCESS,
@@ -127,9 +126,33 @@ export const fetchExpertCompaniesSuccess = companies => ({
 });
 
 
-// 5c. Fetch Expert Error
+// 4c. Fetch Expert Error
 export const FETCH_EXPERT_COMPANIES_ERROR = 'FETCH_EXPERT_COMPANIES_ERROR';
 export const fetchExpertCompaniesError = errMsg => ({
     type: FETCH_EXPERT_COMPANIES_ERROR,
     errMsg
 });
+
+
+// Add userCompany
+export const ADD_USER_COMPANY = 'ADD_USER_COMPANY';
+export const addUserCompany = company => ({
+    type: ADD_USER_COMPANY,
+    company
+});
+
+
+// Update userCompany
+// Delete userCompany
+
+
+// Add expert
+export const ADD_EXPERT = 'ADD_EXPERT';
+export const addExpert = expert => ({
+    type: ADD_EXPERT,
+    expert
+});
+
+
+// Update expert
+// Delete expert
