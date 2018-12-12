@@ -134,7 +134,7 @@ export const fetchExpertCompaniesError = errMsg => ({
 });
 
 
-// Add userCompany
+// 5a. Add userCompany
 export const ADD_USER_COMPANY = 'ADD_USER_COMPANY';
 export const addUserCompany = company => ({
     type: ADD_USER_COMPANY,
@@ -142,7 +142,7 @@ export const addUserCompany = company => ({
 });
 
 
-// Update userCompany
+// 5b. Update userCompany
 export const UPDATE_USER_COMPANY = 'UPDATE_USER_COMPANY';
 export const updateUserCompany = company => ({
     type: UPDATE_USER_COMPANY,
@@ -150,7 +150,7 @@ export const updateUserCompany = company => ({
 });
 
 
-// Delete userCompany
+// 5c. Delete userCompany
 export const DELETE_USER_COMPANY = 'DELETE_USER_COMPANY';
 export const deleteUserCompany = company => ({
     type: DELETE_USER_COMPANY,
@@ -158,7 +158,7 @@ export const deleteUserCompany = company => ({
 });
 
 
-// Add expert
+// 6a. Add expert
 export const ADD_EXPERT = 'ADD_EXPERT';
 export const addExpert = expert => ({
     type: ADD_EXPERT,
@@ -166,5 +166,17 @@ export const addExpert = expert => ({
 });
 
 
-// Update expert
-// Delete expert
+// 6b. Update expert
+export const UPDATE_EXPERT = 'UPDATE_EXPERT';
+export const updateExpert = expert => ({
+    type: UPDATE_EXPERT,
+    expert
+});
+
+
+// 6c. Delete expert
+export const DELETE_EXPERT = 'DELETE_EXPERT';
+export const deleteExpert = expert => ({
+    type: DELETE_EXPERT,
+    expert
+});
