@@ -1,5 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {fetchMergerCompanies} from '../actions';
+import store from '../store';
 
 export function MergerPage(props) {
     
@@ -7,15 +9,22 @@ export function MergerPage(props) {
 
       event.preventDefault();
 
-      const companies = props.companies.map(company => {
-        console.log(company); // *****************
-        return (
+      // const companies = props.companies.map(company => {
+      //   console.log(company); // *****************
+      //   return (
 
-            `<div>${company.name} ${company.location} ${company.industry} ${company.profile}</div>`
-          ); 
-      });
-      console.log(companies)
-      document.getElementById("potentialMergComps").innerHTML = companies;
+      //       `<div>${company.name} ${company.location} ${company.industry} ${company.profile}</div>`
+      //     ); 
+      // });
+      // console.log(companies) 
+      // document.getElementById("potentialMergComps").innerHTML = companies;
+
+      let industry = document.getElementById('industry').value;
+      console.log(industry); // ********************************************
+
+      let location = document.getElementById('location').value;
+
+      store.dispatch(fetchMergerCompanies(industry, location));
 
     }
 
@@ -26,7 +35,7 @@ export function MergerPage(props) {
 
         <form>
           <label>Industry</label>
-          <select>
+          <select id='industry'>
             <option value="Technology">Technology</option>
             <option value="Financial">Financial</option>
             <option value="Beauty">Beauty</option>
@@ -34,7 +43,7 @@ export function MergerPage(props) {
           </select>
 
           <label>Location</label>
-          <select>
+          <select id='location'>
             <option value="New York">New York</option>
             <option value="Atlanta">Atlanta</option>
             <option value="Memphis">Memphis</option>
