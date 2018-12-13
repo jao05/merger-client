@@ -5,22 +5,11 @@ import store from '../store';
 
 export function MergerPage(props) {
     
-    function demoShowComps(event) {
+    function showMergerComps(event) {
 
-      event.preventDefault();
+      event.preventDefault();      
 
-      // const companies = props.companies.map(company => {
-      //   console.log(company); // *****************
-      //   return (
-
-      //       `<div>${company.name} ${company.location} ${company.industry} ${company.profile}</div>`
-      //     ); 
-      // });
-      // console.log(companies) 
-      // document.getElementById("potentialMergComps").innerHTML = companies;
-
-      let industry = document.getElementById('industry').value;
-      console.log(industry); // ********************************************
+      let industry = document.getElementById('industry').value;      
 
       let location = document.getElementById('location').value;
 
@@ -50,7 +39,7 @@ export function MergerPage(props) {
             <option value="San Francisco">San Francisco</option>
           </select>          
 
-          <button onClick={demoShowComps}>Search</button>
+          <button onClick={showMergerComps}>Search</button>
         </form>
 
         <div id="potentialMergComps">Potential Merge Comps Placeholder</div>

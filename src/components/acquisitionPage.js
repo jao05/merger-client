@@ -1,6 +1,22 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {fetchAcquisitionCompanies} from '../actions';
+import store from '../store';
 
 export default function AcquisitionPage(props) {
+    
+    function showAcquisitionComps(event) {
+
+      event.preventDefault();      
+
+      let industry = document.getElementById('industry').value;      
+
+      let location = document.getElementById('location').value;
+
+      store.dispatch(fetchAcquisitionCompanies(industry, location));
+
+    }
+
     return (
       <div id="acquisitionPage">
         <h2>Acquisition Page Header</h2>
@@ -8,7 +24,7 @@ export default function AcquisitionPage(props) {
 
         <form>
           <label>Industry</label>
-          <select>
+          <select id='industry'>
             <option value="Technology">Technology</option>
             <option value="Financial">Financial</option>
             <option value="Beauty">Beauty</option>
@@ -16,14 +32,14 @@ export default function AcquisitionPage(props) {
           </select>
 
           <label>Location</label>
-          <select>
+          <select id='location'>
             <option value="New York">New York</option>
             <option value="Atlanta">Atlanta</option>
             <option value="Memphis">Memphis</option>
             <option value="San Francisco">San Francisco</option>
           </select>          
 
-          <button>Search</button>
+          <button onClick={showAcquisitionComps}>Search</button>
         </form>
 
         <div id="potentialAcqComps">Potential Acquisition Comps</div>

@@ -1,8 +1,5 @@
 import {API_BASE_URL} from './config';
 
-// 1. Action creators for All CRUD functions for ALL endpoints???
-// 2. Confirm that fetch is GET
-// 3. Should remaining CRUD functions follow same convention (asyn, success, error action creators)
 
 // 1a. Action creator to fetch companies interested in merging (async)
 export const fetchMergerCompanies = (industry, location) => dispatch => {
@@ -39,14 +36,15 @@ export const fetchMergerCompaniesError = errMsg => ({
 
 
 // 2a. Action creator to fetch companies interested in being acquired (async)
-export const fetchAcquisitionCompanies = () => dispatch => {
-    fetch(`${API_BASE_URL}/userCompany`).then(res => {
+export const fetchAcquisitionCompanies = (industry, location) => dispatch => {
+    fetch(`${"http://localhost:8000"}/userCompany/${industry}/${location}`).then(res => {
         if (!res.ok) {
             return Promise.reject(res.statusText);
         }
         return res.json();
     })
     .then(companies => {
+        console.log(companies); // **************************
         dispatch(fetchAcquisitionCompaniesSuccess(companies));
     })
     .catch(err => {
