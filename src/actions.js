@@ -70,14 +70,15 @@ export const fetchAcquisitionCompaniesError = errMsg => ({
 
 
 // 3a. Action creator to fetch companies interested in buying other companies (async)
-export const fetchSellCompanies = () => dispatch => {
-    fetch(`${API_BASE_URL}/userCompany`).then(res => {
+export const fetchSellCompanies = (industry, location) => dispatch => {
+    fetch(`${"http://localhost:8000"}/userCompany/${industry}/${location}`).then(res => {
         if (!res.ok) {
             return Promise.reject(res.statusText);
         }
         return res.json();
     })
     .then(companies => {
+        console.log(companies); // **************************
         dispatch(fetchSellCompaniesSuccess(companies));
     })
     .catch(err => {
