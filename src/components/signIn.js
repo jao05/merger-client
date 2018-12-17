@@ -11,6 +11,8 @@ export default function SignIn(props) {
 
         <label type='password'>Password</label>
         <input/>
+
+        <button type='Submit'>Submit</button>
       </div>
     );
 }
