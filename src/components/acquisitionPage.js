@@ -3,9 +3,14 @@ import {connect} from 'react-redux';
 import {fetchAcquisitionCompanies} from '../actions';
 import store from '../store';
 
-export default function AcquisitionPage(props) {
+export class AcquisitionPage extends React.Component {
     
-    function showAcquisitionComps(event) {
+    constructor(props)  {
+
+      super(props);
+    }
+
+    showAcquisitionComps(event) {
 
       event.preventDefault();      
 
@@ -17,33 +22,53 @@ export default function AcquisitionPage(props) {
 
     }
 
-    return (
-      <div id="acquisitionPage">
-        <h2>Acquisition Page Header</h2>
-        <p>Enter search criteria to find companies that are interested in being acquired.</p>
+    render() {
 
-        <form>
-          <label>Industry</label>
-          <select id='industry'>
-            <option value="Technology">Technology</option>
-            <option value="Financial">Financial</option>
-            <option value="Beauty">Beauty</option>
-            <option value="Health">Health</option>
-          </select>
+      console.log(this.props.companies); // *******************************
+      const companies = this.props.companies.companies.map((company, index) => { // ****index not working properly ******
+        return (
+            <li key={index}>{company.name} {company.industry} {company.location.city}</li>
+          )
+      });
 
-          <label>Location</label>
-          <select id='location'>
-            <option value="New York">New York</option>
-            <option value="Atlanta">Atlanta</option>
-            <option value="Memphis">Memphis</option>
-            <option value="San Francisco">San Francisco</option>
-          </select>          
+      return (
+        <div id="acquisitionPage">
+          <h2>Acquisition Page Header</h2>
+          <p>Enter search criteria to find companies that are interested in being acquired.</p>
 
-          <button onClick={showAcquisitionComps}>Search</button>
-        </form>
+          <form>
+            <label>Industry</label>
+            <select id='industry'>
+              <option value="Technology">Technology</option>
+              <option value="Financial">Financial</option>
+              <option value="Beauty">Beauty</option>
+              <option value="Health">Health</option>
+            </select>
 
-        <div id="potentialAcqComps">Potential Acquisition Comps</div>
-        <div id="potentialAcqCompDetail">Company Details</div>
-      </div>
-    );
+            <label>Location</label>
+            <select id='location'>
+              <option value="New York">New York</option>
+              <option value="Atlanta">Atlanta</option>
+              <option value="Memphis">Memphis</option>
+              <option value="San Francisco">San Francisco</option>
+            </select>          
+
+            <button onClick={this.showAcquisitionComps}>Search</button>
+          </form>
+
+          <div id="potentialAcqComps">
+            <ul>{companies}</ul>
+          </div>
+          <div id="potentialAcqCompDetail">Company Details</div>
+        </div>
+      );
+    }    
 }
+
+
+const mapStateToProps = state => ({
+  
+  companies: state.companies
+}) 
+
+export default connect(mapStateToProps)(AcquisitionPage);

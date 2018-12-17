@@ -3,9 +3,14 @@ import {connect} from 'react-redux';
 import {fetchSellCompanies} from '../actions';
 import store from '../store';
 
-export default function SellPage(props) {
+export class SellPage extends React.Component {
     
-	function showSellComps(event) {
+    constructor(props)  {
+
+      super(props);
+    }
+
+    showSellComps(event) {
 
       event.preventDefault();      
 
@@ -17,33 +22,51 @@ export default function SellPage(props) {
 
     }
 
-    return (
-      <div id="sellPage">
-        <h2>Sell Page Header</h2>
-        <p>Enter search criteria to find companies that are interested in buying other companies.</p>
-        
-        <form>
-          <label>Industry</label>
-          <select id='industry'>
-            <option value="Technology">Technology</option>
-            <option value="Financial">Financial</option>
-            <option value="Beauty">Beauty</option>
-            <option value="Health">Health</option>
-          </select>
+    render() {
 
-          <label>Location</label>
-          <select id='location'>
-            <option value="New York">New York</option>
-            <option value="Atlanta">Atlanta</option>
-            <option value="Memphis">Memphis</option>
-            <option value="San Francisco">San Francisco</option>
-          </select>          
+      console.log(this.props.companies); // *******************************
+      const companies = this.props.companies.companies.map((company, index) => { // ****index not working properly ******
+        return (
+            <li key={index}>{company.name} {company.industry} {company.location.city}</li>
+          )
+      });
 
-          <button onClick={showSellComps}>Search</button>
-        </form>
+      return (
+        <div id="sellPage">
+          <h2>Sell Page Header</h2>
+          <p>Enter search criteria to find companies that are interested in buying other companies.</p>
+          
+          <form>
+            <label>Industry</label>
+            <select id='industry'>
+              <option value="Technology">Technology</option>
+              <option value="Financial">Financial</option>
+              <option value="Beauty">Beauty</option>
+              <option value="Health">Health</option>
+            </select>
 
-        <div id="potentialSellComps">Potential Sell Comps</div>
-        <div id="potentialSellCompDetail">Company Details</div>
-      </div>
-    );
+            <label>Location</label>
+            <select id='location'>
+              <option value="New York">New York</option>
+              <option value="Atlanta">Atlanta</option>
+              <option value="Memphis">Memphis</option>
+              <option value="San Francisco">San Francisco</option>
+            </select>          
+
+            <button onClick={this.showSellComps}>Search</button>
+          </form>
+
+          <div id="potentialSellComps">{companies}</div>
+          <div id="potentialSellCompDetail">Company Details</div>
+        </div>
+      );  
+    }    
 }
+
+
+const mapStateToProps = state => ({
+  
+  companies: state.companies
+}) 
+
+export default connect(mapStateToProps)(SellPage);
