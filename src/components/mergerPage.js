@@ -3,9 +3,14 @@ import {connect} from 'react-redux';
 import {fetchMergerCompanies} from '../actions';
 import store from '../store';
 
-export function MergerPage(props) {
+export class MergerPage extends React.Component {
     
-    function showMergerComps(event) {
+    constructor(props)  {
+
+      super(props);
+    }
+
+    showMergerComps(event) {
 
       event.preventDefault();      
 
@@ -15,42 +20,55 @@ export function MergerPage(props) {
 
       store.dispatch(fetchMergerCompanies(industry, location));
 
-    }
+    }    
+    
 
-    return (
-      <div id="mergerPage">
-        <h2>Merger Page Header</h2>
-        <p>Enter search criteria to find companies that are interested in merging.</p>
+    render() {
+      console.log(this.props.companies); // *******************************
+      const companies = this.props.companies.companies.map((company, index) => { // ******************************
+        return (
+            <li key={index}>{company.name} {company.industry} {company.location.city}</li>
+          )
+      });  
 
-        <form>
-          <label>Industry</label>
-          <select id='industry'>
-            <option value="Technology">Technology</option>
-            <option value="Financial">Financial</option>
-            <option value="Beauty">Beauty</option>
-            <option value="Health">Health</option>
-          </select>
+      return (
+        <div id="mergerPage">
+          <h2>Merger Page Header</h2>
+          <p>Enter search criteria to find companies that are interested in merging.</p>
 
-          <label>Location</label>
-          <select id='location'>
-            <option value="New York">New York</option>
-            <option value="Atlanta">Atlanta</option>
-            <option value="Memphis">Memphis</option>
-            <option value="San Francisco">San Francisco</option>
-          </select>          
+          <form>
+            <label>Industry</label>
+            <select id='industry'>
+              <option value="Technology">Technology</option>
+              <option value="Financial">Financial</option>
+              <option value="Beauty">Beauty</option>
+              <option value="Health">Health</option>
+            </select>
 
-          <button onClick={showMergerComps}>Search</button>
-        </form>
+            <label>Location</label>
+            <select id='location'>
+              <option value="New York">New York</option>
+              <option value="Atlanta">Atlanta</option>
+              <option value="Memphis">Memphis</option>
+              <option value="San Francisco">San Francisco</option>
+            </select>          
 
-        <div id="potentialMergComps">Potential Merge Comps Placeholder</div>
-        <div id="potentialMergCompDetail">Company Details Placeholder</div>
-      </div>
-    );
+            <button onClick={this.showMergerComps}>Search</button>
+          </form>
+
+          <div id="potentialMergComps">
+            <ul>{companies}</ul>
+          </div>
+          
+          <div id="potentialMergCompDetail">Company Details Placeholder</div>
+        </div>     
+      );  
+    }    
 }
 
-export const mapStateToProps = state => ({
-    
-    companies: state.companies
-});
+const mapStateToProps = state => ({
+  
+  companies: state.companies
+}) 
 
 export default connect(mapStateToProps)(MergerPage);

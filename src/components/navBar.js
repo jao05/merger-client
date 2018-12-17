@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
 export function NavBar(props) {
     
@@ -26,7 +27,7 @@ export function NavBar(props) {
             <h1>Merger</h1>         
           </header>          
 
-          <button>Sign In</button>
+          <Link to="/signIn"><button>Sign In</button></Link>
         </nav>
       );
     }

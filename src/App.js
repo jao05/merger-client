@@ -7,6 +7,7 @@ import MergerPage from './components/mergerPage';
 import AcquisitionPage from './components/acquisitionPage';
 import SellPage from './components/sellPage';
 import ExpertPage from './components/expertPage';
+import SignIn from './components/signIn';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
 class App extends Component {
@@ -22,6 +23,7 @@ class App extends Component {
         		<Route exact path="/acquisition" component={AcquisitionPage}/>
         		<Route exact path="/sell" component={SellPage}/>
         		<Route exact path="/expert" component={ExpertPage}/>
+            <Route exact path="/signIn" component={SignIn}/>
         	</main>        
       	</div>
       </Router>      

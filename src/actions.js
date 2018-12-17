@@ -3,7 +3,7 @@ import {API_BASE_URL} from './config';
 
 // 1a. Action creator to fetch companies interested in merging (async)
 export const fetchMergerCompanies = (industry, location) => dispatch => {
-    fetch(`${"http://localhost:8000"}/userCompany/?industry=${industry}location=${location}`).then(res => {
+    fetch(`${"http://localhost:8000"}/userCompany/${industry}/${location}`).then(res => {
         if (!res.ok) {
             return Promise.reject(res.statusText);
         }
@@ -112,6 +112,7 @@ export const fetchExpertCompanies = (type, location) => dispatch => {
         return res.json();
     })
     .then(companies => {
+        console.log(companies); // **************************
         dispatch(fetchExpertCompaniesSuccess(companies));
     })
     .catch(err => {
