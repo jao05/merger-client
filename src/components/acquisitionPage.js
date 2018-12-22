@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {fetchAcquisitionCompanies} from '../actions';
 import store from '../store';
+import ClearBtn from './clearBtn';
 
 export class AcquisitionPage extends React.Component {
     
@@ -59,6 +60,9 @@ export class AcquisitionPage extends React.Component {
           <div id="potentialAcqComps">
             <ul>{companies}</ul>
           </div>
+
+          <ClearBtn />
+
           <div id="potentialAcqCompDetail">Company Details</div>
         </div>
       );

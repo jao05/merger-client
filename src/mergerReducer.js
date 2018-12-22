@@ -38,14 +38,14 @@ export const mergerReducer = (state=initialState, action) => {
         });
     }
 
-    /*
-    if (action.type === ADD_ITEM) {
+    
+    if (action.type === actions.CLEAR_SEARCH_COMPANIES) {
         return Object.assign({}, state, {
-            
+            companies: action.companies
         });
     }
 
-
+    /*
     if (action.type === ADD_ITEM) {
         return Object.assign({}, state, {
             

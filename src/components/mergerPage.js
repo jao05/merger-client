@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {fetchMergerCompanies} from '../actions';
 import store from '../store';
+import ClearBtn from './clearBtn';
 
 export class MergerPage extends React.Component {
     
@@ -60,6 +61,8 @@ export class MergerPage extends React.Component {
             <ul>{companies}</ul>            
           </div>
           
+          <ClearBtn />
+
           <div id="potentialMergCompDetail">Company Details Placeholder</div>
         </div>     
       );  

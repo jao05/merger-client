@@ -137,7 +137,21 @@ export const fetchExpertCompaniesError = errMsg => ({
 });
 
 
-// 5a. Add userCompany********************************************
+// 5. Clear Search Companies
+export const CLEAR_SEARCH_COMPANIES = 'CLEAR_SEARCH_COMPANIES';
+export const clearSearchCompanies = () => ({
+    type: CLEAR_SEARCH_COMPANIES,
+    companies: []
+});
+
+
+
+
+
+
+
+
+// #a. Add userCompany********************************************
 export const ADD_USER_COMPANY = 'ADD_USER_COMPANY';
 export const addUserCompany = company => ({
     type: ADD_USER_COMPANY,
@@ -145,7 +159,7 @@ export const addUserCompany = company => ({
 });
 
 
-// 5b. Update userCompany
+// #b. Update userCompany
 export const UPDATE_USER_COMPANY = 'UPDATE_USER_COMPANY';
 export const updateUserCompany = company => ({
     type: UPDATE_USER_COMPANY,
@@ -153,7 +167,7 @@ export const updateUserCompany = company => ({
 });
 
 
-// 5c. Delete userCompany
+// #c. Delete userCompany
 export const DELETE_USER_COMPANY = 'DELETE_USER_COMPANY';
 export const deleteUserCompany = company => ({
     type: DELETE_USER_COMPANY,
