@@ -28,7 +28,7 @@ export class AcquisitionPage extends React.Component {
       const companies = this.props.companies.companies.map((company, index) => { // ****index not working properly ******
         return (
             <li key={index}>{company.name} {company.industry} {company.location.city}</li>
-          )
+        )
       });
 
       return (

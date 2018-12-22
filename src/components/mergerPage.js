@@ -28,7 +28,7 @@ export class MergerPage extends React.Component {
       const companies = this.props.companies.companies.map((company, index) => { // ****index not working properly ******
         return (
             <li key={index}>{company.name} {company.industry} {company.location.city}</li>
-          )
+        )
       });  
 
       return (
@@ -57,7 +57,7 @@ export class MergerPage extends React.Component {
           </form>
 
           <div id="potentialMergComps">
-            <ul>{companies}</ul>
+            <ul>{companies}</ul>            
           </div>
           
           <div id="potentialMergCompDetail">Company Details Placeholder</div>

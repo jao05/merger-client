@@ -28,7 +28,7 @@ export class SellPage extends React.Component {
       const companies = this.props.companies.companies.map((company, index) => { // ****index not working properly ******
         return (
             <li key={index}>{company.name} {company.industry} {company.location.city}</li>
-          )
+        )
       });
 
       return (
@@ -56,7 +56,9 @@ export class SellPage extends React.Component {
             <button onClick={this.showSellComps}>Search</button>
           </form>
 
-          <div id="potentialSellComps">{companies}</div>
+          <div id="potentialSellComps">
+            <ul>{companies}</ul>
+          </div>
           <div id="potentialSellCompDetail">Company Details</div>
         </div>
       );  
