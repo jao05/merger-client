@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/navBar';
+import LandingPage from './components/landingPage'; // Later, link to root Route below *********
 import HomePage from './components/homePage';
 import MergerPage from './components/mergerPage';
 import AcquisitionPage from './components/acquisitionPage';
@@ -17,7 +18,7 @@ class App extends Component {
       	<div className="app">        
         	<NavBar />        	
         	<main>        		        
-            <Route exact path="/" component={HomePage}/>
+            <Route exact path="/" component={HomePage}/> 
             <Route exact path="/home" component={HomePage}/>
         		<Route exact path="/merger" component={MergerPage}/>
         		<Route exact path="/acquisition" component={AcquisitionPage}/>
