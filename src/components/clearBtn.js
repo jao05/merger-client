@@ -1,4 +1,5 @@
 // This component will allow the user to clear the search company results
+
 import {clearSearchCompanies} from '../actions';
 import React from 'react';
 import {connect} from 'react-redux';

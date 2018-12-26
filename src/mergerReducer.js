@@ -5,7 +5,10 @@ import * as actions from './actions';
 const initialState = {
 
     user: null,
-    companies: null
+    mergerCompanies: [],
+    acquisitionCompanies: [],
+    sellCompanies: [],
+    expertCompanies: []
 };
 
 export const mergerReducer = (state=initialState, action) => {
@@ -13,39 +16,39 @@ export const mergerReducer = (state=initialState, action) => {
     
     if (action.type === actions.FETCH_MERGER_COMPANIES_SUCCESS) {
         return Object.assign({}, state, {
-            companies: action.companies
+            mergerCompanies: action.companies
         });
     }
 
     
     if (action.type === actions.FETCH_ACQUISITION_COMPANIES_SUCCESS) {
         return Object.assign({}, state, {
-            companies: action.companies
+            acquisitionCompanies: action.companies
         });
     }
 
     
     if (action.type === actions.FETCH_SELL_COMPANIES_SUCCESS) {
         return Object.assign({}, state, {
-           companies: action.companies 
+           sellCompanies: action.companies 
         });
     }
 
     
     if (action.type === actions.FETCH_EXPERT_COMPANIES_SUCCESS) {
         return Object.assign({}, state, {
-           companies: action.companies  
-        });
-    }
-
-    
-    if (action.type === actions.CLEAR_SEARCH_COMPANIES) {
-        return Object.assign({}, state, {
-            companies: action.companies
+           expertCompanies: action.companies  
         });
     }
 
     /*
+    if (action.type === ADD_ITEM) {
+        return Object.assign({}, state, {
+            
+        });
+    }
+
+
     if (action.type === ADD_ITEM) {
         return Object.assign({}, state, {
             

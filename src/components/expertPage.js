@@ -71,7 +71,7 @@ export class ExpertPage extends React.Component {
 
 const mapStateToProps = state => ({
   
-  companies: state.companies
+  companies: state.expertCompanies
 }) 
 
 export default connect(mapStateToProps)(ExpertPage);

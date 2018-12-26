@@ -72,7 +72,7 @@ export class AcquisitionPage extends React.Component {
 
 const mapStateToProps = state => ({
   
-  companies: state.companies
+  companies: state.acquisitionCompanies
 }) 
 
 export default connect(mapStateToProps)(AcquisitionPage);
