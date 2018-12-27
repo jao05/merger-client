@@ -25,20 +25,14 @@ export class MergerPage extends React.Component {
     
 
     render() {
-      console.log(this.props.companies); // *******************************      
-      if (this.props.companies) {
-        console.log('HERE.......');  
-        const companies = this.props.companies.map((company, index) => { // ****index not working properly ******
-          return (
-            <li key={index}>{company.name} {company.industry} {company.location.city}</li>
-          )
-        });
-        console.log(companies); // *****************************
-      }
-      else {
-        console.log('HERE 2 ..........');
-        const companies = 'a';
-      } 
+      console.log(this.props.companies); // *******************************           
+
+      let companies = this.props.companies.map((company, index) => { // ****index not working properly ******
+        return (
+          <li key={index}>{company.name} {company.industry} {company.location.city}</li>
+        )
+      });   
+       
 
       return (
         <div id="mergerPage">

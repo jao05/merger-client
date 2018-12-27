@@ -23,7 +23,7 @@ export const fetchMergerCompanies = (industry, location) => dispatch => {
 export const FETCH_MERGER_COMPANIES_SUCCESS = 'FETCH_MERGER_COMPANIES_SUCCESS';
 export const fetchMergerCompaniesSuccess = companies => ({
     type: FETCH_MERGER_COMPANIES_SUCCESS,
-    companies
+    companies: companies.companies
 });
 
 
@@ -57,7 +57,7 @@ export const fetchAcquisitionCompanies = (industry, location) => dispatch => {
 export const FETCH_ACQUISITION_COMPANIES_SUCCESS = 'FETCH_ACQUISITION_COMPANIES_SUCCESS';
 export const fetchAcquisitionCompaniesSuccess = companies => ({
     type: FETCH_ACQUISITION_COMPANIES_SUCCESS,
-    companies
+    companies: companies.companies
 });
 
 
@@ -91,7 +91,7 @@ export const fetchSellCompanies = (industry, location) => dispatch => {
 export const FETCH_SELL_COMPANIES_SUCCESS = 'FETCH_SELL_COMPANIES_SUCCESS';
 export const fetchSellCompaniesSuccess = companies => ({
     type: FETCH_SELL_COMPANIES_SUCCESS,
-    companies
+    companies: companies.companies
 });
 
 
@@ -125,7 +125,7 @@ export const fetchExpertCompanies = (type, location) => dispatch => {
 export const FETCH_EXPERT_COMPANIES_SUCCESS = 'FETCH_EXPERT_COMPANIES_SUCCESS';
 export const fetchExpertCompaniesSuccess = companies => ({
     type: FETCH_EXPERT_COMPANIES_SUCCESS,
-    companies
+    companies: companies.companies
 });
 
 
@@ -141,7 +141,9 @@ export const fetchExpertCompaniesError = errMsg => ({
 export const CLEAR_SEARCH_COMPANIES = 'CLEAR_SEARCH_COMPANIES';
 export const clearSearchCompanies = () => ({
     type: CLEAR_SEARCH_COMPANIES,
-    companies: []
+    mergerCompanies: [],
+    acquistionCompanies: [],
+    sellCompanies: []
 });
 
 

@@ -41,6 +41,15 @@ export const mergerReducer = (state=initialState, action) => {
         });
     }
 
+    if (action.type === actions.CLEAR_SEARCH_COMPANIES) { 
+        return Object.assign({}, state, { 
+            mergerCompanies: [],
+            acquisitionCompanies: [],
+            sellCompanies: [],
+            expertCompanies: []
+        }); 
+    }
+
     /*
     if (action.type === ADD_ITEM) {
         return Object.assign({}, state, {

@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {fetchExpertCompanies} from '../actions';
 import store from '../store';
+import ClearBtn from './clearBtn';
 
 export class ExpertPage extends React.Component {
     
@@ -25,7 +26,7 @@ export class ExpertPage extends React.Component {
     render() {
 
       console.log(this.props.companies); // *******************************
-      const companies = this.props.companies.companies.map((company, index) => { // ****index not working properly ******
+      const companies = this.props.companies.map((company, index) => { // ****index not working properly ******
         return (
             <li key={index}>{company.name} {company.industry} {company.location.city}</li>
           )
@@ -60,6 +61,8 @@ export class ExpertPage extends React.Component {
                 {companies}
               </ul>
               
+              <ClearBtn />
+
               <button>Choose</button>
             </form>
           </div>
