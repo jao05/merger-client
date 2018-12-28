@@ -26,9 +26,15 @@ export class SellPage extends React.Component {
     render() {
 
       console.log(this.props.companies); // *******************************
-      const companies = this.props.companies.map((company, index) => { // ****index not working properly ******
+      const companyDivs = this.props.companies.map((company, index) => { // ****index not working properly ******
         return (
-            <li key={index}>{company.name} {company.industry} {company.location.city}</li>
+            <div key={index} value={index}>
+            Name: {company.name} 
+            Industry: {company.industry} 
+            Location: {company.location.city} 
+            Description: {company.description}
+            Contact: {company.contact.firstName} {company.contact.lastName} at {company.contact.email} 
+          </div>
         )
       });
 
@@ -59,7 +65,7 @@ export class SellPage extends React.Component {
           </form>
 
           <div id="potentialSellComps">
-            <ul>{companies}</ul>
+            <ul>{companyDivs}</ul>
           </div>
 
           <ClearBtn />

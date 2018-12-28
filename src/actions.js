@@ -151,8 +151,6 @@ export const clearSearchCompanies = () => ({
 
 
 
-
-
 // #a. Add userCompany********************************************
 export const ADD_USER_COMPANY = 'ADD_USER_COMPANY';
 export const addUserCompany = company => ({

@@ -26,7 +26,7 @@ export class ExpertPage extends React.Component {
     render() {
 
       console.log(this.props.companies); // *******************************
-      const companies = this.props.companies.map((company, index) => { // ****index not working properly ******
+      const companyDivs = this.props.companies.map((company, index) => { // ****index not working properly ******
         return (
             <li key={index}>{company.name} {company.industry} {company.location.city}</li>
           )
@@ -54,17 +54,13 @@ export class ExpertPage extends React.Component {
             <button onClick={this.showExperts}>Search</button>
           </form>
 
-          <div id="selectExpertSection">
-            <p>Select an Expert...</p>
-            <form>
-              <ul>
-                {companies}
-              </ul>
+          <div id="selectExpertSection">            
+            
+            <ul>
+              {companyDivs}
+            </ul>
               
-              <ClearBtn />
-
-              <button>Choose</button>
-            </form>
+            <ClearBtn />            
           </div>
         </div>
       );  

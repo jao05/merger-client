@@ -67,7 +67,7 @@ export class MergerPage extends React.Component {
           </form>
 
           <div id="potentialMergComps">
-            <div>{companyDivs}</div>            
+            <ul>{companyDivs}</ul>            
           </div>
           
           <ClearBtn />
