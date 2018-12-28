@@ -36,6 +36,7 @@ export class AcquisitionPage extends React.Component {
         <div id="acquisitionPage">
           <h2>Acquisition Page Header</h2>
           <p>Enter search criteria to find companies that are interested in being acquired.</p>
+          <p>Contact those that interest you.</p>
 
           <form>
             <label>Industry</label>

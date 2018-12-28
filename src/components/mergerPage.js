@@ -15,7 +15,7 @@ export class MergerPage extends React.Component {
 
       event.preventDefault();      
 
-      let industry = document.getElementById('industry').value;      
+      let industry = document.getElementById('industry').value;    
 
       let location = document.getElementById('location').value;
 
@@ -25,19 +25,26 @@ export class MergerPage extends React.Component {
     
 
     render() {
-      console.log(this.props.companies); // *******************************           
+      console.log(this.props.companies); // *******************************
+      let companyDivs = this.props.companies.map((company, index) => { // ****index not working properly ******        
 
-      let companies = this.props.companies.map((company, index) => { // ****index not working properly ******
-        return (
-          <li key={index}>{company.name} {company.industry} {company.location.city}</li>
+        return ( 
+          <div key={index} value={index}>
+            Name: {company.name} 
+            Industry: {company.industry} 
+            Location: {company.location.city} 
+            Description: {company.description}
+            Contact: {company.contact.firstName} {company.contact.lastName} at {company.contact.email} 
+          </div>
         )
       });   
-       
+      
 
       return (
         <div id="mergerPage">
           <h2>Merger Page Header</h2>
           <p>Enter search criteria to find companies that are interested in merging.</p>
+          <p>Contact those that interest you.</p>
 
           <form>
             <label>Industry</label>
@@ -60,12 +67,12 @@ export class MergerPage extends React.Component {
           </form>
 
           <div id="potentialMergComps">
-            <ul>{companies}</ul>            
+            <div>{companyDivs}</div>            
           </div>
           
           <ClearBtn />
 
-          <div id="potentialMergCompDetail">Company Details Placeholder</div>
+          <div id="potentialMergCompDetail"></div>
         </div>     
       );  
     }    

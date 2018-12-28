@@ -36,6 +36,7 @@ export class SellPage extends React.Component {
         <div id="sellPage">
           <h2>Sell Page Header</h2>
           <p>Enter search criteria to find companies that are interested in buying other companies.</p>
+          <p>Contact those that interest you.</p>
           
           <form>
             <label>Industry</label>
