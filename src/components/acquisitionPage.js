@@ -31,7 +31,7 @@ export class AcquisitionPage extends React.Component {
           <div key={index} value={index}>
             Name: {company.name} 
             Industry: {company.industry} 
-            Location: {company.location.city} 
+            Location: {company.location} 
             Description: {company.description}
             Contact: {company.contact.firstName} {company.contact.lastName} at {company.contact.email} 
           </div>
