@@ -40,7 +40,7 @@ export class SellPage extends React.Component {
 
       return (
         <div id="sellPage">
-          <h2>Sell Page Header</h2>
+          <h2>Sell</h2>
           <p>Enter search criteria to find companies that are interested in buying other companies.</p>
           <p>Contact those that interest you.</p>
           

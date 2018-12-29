@@ -42,7 +42,7 @@ export class MergerPage extends React.Component {
 
       return (
         <div id="mergerPage">
-          <h2>Merger Page Header</h2>
+          <h2>Merge</h2>
           <p>Enter search criteria to find companies that are interested in merging.</p>
           <p>Contact those that interest you.</p>
 

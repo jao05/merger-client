@@ -34,7 +34,7 @@ export class ExpertPage extends React.Component {
 
       return (
         <div id="expertPage">
-          <h2>Expert Page Header</h2>
+          <h2>Find an Expert</h2>
           <p>Get expert help to close your deal.</p>
           <p>Enter criteria to find them and contact those that interest you.</p>
 
