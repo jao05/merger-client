@@ -1,10 +1,20 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {signUserOut} from '../actions';
+import store from '../store'
 
-export function NavBar(props) {
-    
-    if (props.user) {
+
+export class NavBar extends React.Component {
+
+
+    signOut = () => {
+        this.props.dispatch(signUserOut())
+    }
+
+
+    render(){
+      if (this.props.user) {
 
       return (
         <nav role="navigation">
@@ -12,9 +22,9 @@ export function NavBar(props) {
             <h1>Merger</h1>         
           </header>
 
-          <p>Signed in as {props.user.name}</p>
+          <p>Signed in as {this.props.user.name}</p>
 
-          <button>Sign Out</button>
+          <button onClick={() => this.signOut()}>Sign Out</button>
         </nav>
       );  
     }
@@ -27,12 +37,14 @@ export function NavBar(props) {
         </nav>
       );
     }
+    }
+    
+    
 
     
 }
 
 export const mapStateToProps = state => ({
-    
   user: state.user
 });
 

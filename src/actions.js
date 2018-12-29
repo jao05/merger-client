@@ -175,6 +175,12 @@ export const createUserCompanyRequest = (signUpData) => dispatch => {
 };
 
 
+export const SIGN_USER_OUT = 'SIGN_USER_OUT';
+export const signUserOut = () => ({
+    type: SIGN_USER_OUT,
+    user: null
+});
+
 export const ADD_USER_COMPANY_SUCCESS = 'ADD_USER_COMPANY_SUCCESS';
 export const addUserCompanySuccess = user => ({
     type: ADD_USER_COMPANY_SUCCESS,

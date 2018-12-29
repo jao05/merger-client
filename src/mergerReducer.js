@@ -60,6 +60,12 @@ export const mergerReducer = (state=initialState, action) => {
 
 
     /*******DEAL WITH SIGN-IN & SIGN-UP ******************/
+    if (action.type === actions.SIGN_USER_OUT) {
+        return Object.assign({}, state, {
+            user: action.user
+        });
+    }
+
     if (action.type === actions.ADD_USER_COMPANY_SUCCESS) {
         return Object.assign({}, state, {
            user: action.user 
