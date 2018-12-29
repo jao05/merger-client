@@ -83,8 +83,8 @@ export default class SignUp extends React.Component {
 
 		        <label>Open to Sell</label>
 		        <select id='openToSell'>
-		        	<option value='true'>True</option>
-		        	<option value='false'>False</option>
+		        	<option value='true'>Yes</option>
+		        	<option value='false'>No</option>
 		        </select>
 
 		        <label>Company Description</label>
