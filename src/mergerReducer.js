@@ -55,62 +55,14 @@ export const mergerReducer = (state=initialState, action) => {
         return Object.assign({}, state, {
             
         });
-    }
-
-
-    if (action.type === ADD_ITEM) {
-        return Object.assign({}, state, {
-            
-        });
-    }
-
-
-    if (action.type === ADD_ITEM) {
-        return Object.assign({}, state, {
-            
-        });
-    }
-
-
-    if (action.type === ADD_ITEM) {
-        return Object.assign({}, state, {
-            
-        });
-    }
-
-
-    if (action.type === ADD_ITEM) {
-        return Object.assign({}, state, {
-            
-        });
-    }
-
-
-    if (action.type === ADD_ITEM) {
-        return Object.assign({}, state, {
-            
-        });
-    }
-
-
-    if (action.type === ADD_ITEM) {
-        return Object.assign({}, state, {
-            
-        });
-    }
-
-
-    if (action.type === ADD_ITEM) {
-        return Object.assign({}, state, {
-            
-        });
-    }
+    }    
     */
 
 
-    if (action.type === actions.ADD_USER_COMPANY) {
+    /*******DEAL WITH SIGN-IN & SIGN-UP ******************/
+    if (action.type === actions.ADD_USER_COMPANY_SUCCESS) {
         return Object.assign({}, state, {
-            
+           user: action.user 
         });
     }
 

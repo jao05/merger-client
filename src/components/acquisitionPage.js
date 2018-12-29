@@ -41,7 +41,10 @@ export class AcquisitionPage extends React.Component {
       return (
         <div id="acquisitionPage">
           <h2>Acquire</h2>
-          <p>Enter search criteria to find companies that are interested in being acquired.</p>
+          <p>
+            Grow your company by acquiring businesses that are similar to yours.
+            Enter search criteria to find companies that are interested.
+          </p>
           <p>Contact those that interest you.</p>
 
           <form>

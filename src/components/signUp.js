@@ -4,46 +4,98 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import store from '../store';
+import {createUserCompanyRequest} from '../actions';
 
-export default function SignUp(props) {    
+export default class SignUp extends React.Component {    
 
-    return (
-      <div>
-        <label>Company Name (Username)</label>
-        <input/>
+    constructor(props)  {
 
-        <label>Company City</label>
-        <input/>
+      super(props);
+    }
 
-        <label>Company State</label>
-        <input/>
+    submitSignUp(event) {
+    	console.log('HERE....'); // *******************************
+    	event.preventDefault();
 
-        <label>Company Country</label>
-        <input/>
+    	const userSignUp = {
+	    	name: document.getElementById('companyName').value,    
+	    	location: {
+	    		city: document.getElementById('companyCity').value,    
+		    	state: document.getElementById('companyState').value,    
+		    	country: document.getElementById('companyCountry').value,    
+	    	},	    	
+	    	industry: document.getElementById('industry').value,    
+	    	contact: {
+	    		firstName: document.getElementById('contactFirstName').value,    
+		    	lastName: document.getElementById('contactLastName').value,    
+		    	email: document.getElementById('contactEmail').value,    	
+	    	},
+	    	description: document.getElementById('companyDescription').value,    
+	    	openToMerger: document.getElementById('openToMerger').value,    
+	    	openToAcquisition: document.getElementById('openToAcquisition').value,    
+	    	openToSell: document.getElementById('openToSell').value,	    	
+	    	password: document.getElementById('password').value	
+    	}
 
-        <label>Industry</label>
-        <input/>
+    	store.dispatch(createUserCompanyRequest(userSignUp));  	
+    }
 
-        <p>Contact Person:</p>
-        <label>First Name</label>
-        <input/>
+    render() {
+    	return (
+	      <div>
+	        <form onSubmit={(e) => this.submitSignUp(e)}>
+	        	<label>Company Name (Username)</label>
+		        <input id='companyName'/>
 
-        <label>Last Name</label>
-        <input/>
+		        <label>Company City</label>
+		        <input id='companyCity'/>
 
-        <label>Email</label>
-        <input/>
+		        <label>Company State</label>
+		        <input id='companyState'/>
 
-        <label>Company Description</label>
-        <input/>
+		        <label>Company Country</label>
+		        <input id='companyCountry'/>
 
-        <label type='password'>Password</label>
-        <input/>
+		        <label>Industry</label>
+		        <input id='industry'/>
 
-        <label type='password'>Re-enter Password</label>
-        <input/>
+		        <p>Contact Person:</p>
+		        <label>First Name</label>
+		        <input id='contactFirstName'/>
 
-        <button type='Submit'>Submit</button>
-      </div>
-    );
+		        <label>Last Name</label>
+		        <input id='contactLastName'/>
+
+		        <label>Email</label>
+		        <input id='contactEmail'/>
+
+		        <label>Open to Merger</label>
+		        <select id='openToMerger'>
+		        	<option value='true'>True</option>
+		        	<option value='false'>False</option>
+		        </select>
+
+		        <label>Open to Acquisition</label>
+		        <select id='openToAcquisition'>
+		        	<option value='true'>True</option>
+		        	<option value='false'>False</option>
+		        </select>
+
+		        <label>Open to Sell</label>
+		        <select id='openToSell'>
+		        	<option value='true'>True</option>
+		        	<option value='false'>False</option>
+		        </select>
+
+		        <label>Company Description</label>
+		        <input id='companyDescription'/>
+
+		        <label type='password'>Password</label>
+		        <input id='password'/> 
+
+		        <button type='Submit'>Submit</button>
+	        </form>        
+	      </div>
+    	);
+    }    
 }

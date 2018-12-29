@@ -137,7 +137,7 @@ export const fetchExpertCompaniesError = errMsg => ({
 });
 
 
-// 5. Clear Search Companies
+// 5. Clear Search Companies after querying and displaying results
 export const CLEAR_SEARCH_COMPANIES = 'CLEAR_SEARCH_COMPANIES';
 export const clearSearchCompanies = () => ({
     type: CLEAR_SEARCH_COMPANIES,
@@ -152,18 +152,47 @@ export const clearSearchCompanies = () => ({
 
 
 // #a. Add userCompany********************************************
-export const ADD_USER_COMPANY = 'ADD_USER_COMPANY';
-export const addUserCompany = company => ({
-    type: ADD_USER_COMPANY,
-    company
+export const createUserCompanyRequest = (signUpData) => dispatch => {
+    fetch(`${"http://localhost:8000"}/userCompany`, {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(signUpData)
+    }).then(res => {
+        if (!res.ok) {
+            return Promise.reject(res.statusText);
+        }
+        return res.json();
+    })
+    .then(userCompany => {
+        console.log(userCompany); // **************************
+        dispatch(addUserCompanySuccess(userCompany));
+    })
+    .catch(err => {
+        dispatch(addUserCompanyError(err));
+    });
+};
+
+
+export const ADD_USER_COMPANY_SUCCESS = 'ADD_USER_COMPANY_SUCCESS';
+export const addUserCompanySuccess = user => ({
+    type: ADD_USER_COMPANY_SUCCESS,
+    user
+});
+
+export const ADD_USER_COMPANY_ERROR = 'ADD_USER_COMPANY_ERROR';
+export const addUserCompanyError = user => ({
+    type: ADD_USER_COMPANY_ERROR,
+    user
 });
 
 
 // #b. Update userCompany
 export const UPDATE_USER_COMPANY = 'UPDATE_USER_COMPANY';
-export const updateUserCompany = company => ({
+export const updateUserCompany = user => ({
     type: UPDATE_USER_COMPANY,
-    company
+    user
 });
 
 
