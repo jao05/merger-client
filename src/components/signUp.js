@@ -19,11 +19,7 @@ export default class SignUp extends React.Component {
 
     	const userSignUp = {
 	    	name: document.getElementById('companyName').value,    
-	    	location: {
-	    		city: document.getElementById('companyCity').value,    
-		    	state: document.getElementById('companyState').value,    
-		    	country: document.getElementById('companyCountry').value,    
-	    	},	    	
+	    	location: document.getElementById('location').value,	    	
 	    	industry: document.getElementById('industry').value,    
 	    	contact: {
 	    		firstName: document.getElementById('contactFirstName').value,    
@@ -47,17 +43,21 @@ export default class SignUp extends React.Component {
 	        	<label>Company Name (Username)</label>
 		        <input id='companyName'/>
 
-		        <label>Company City</label>
-		        <input id='companyCity'/>
-
-		        <label>Company State</label>
-		        <input id='companyState'/>
-
-		        <label>Company Country</label>
-		        <input id='companyCountry'/>
+		        <label>Location</label>
+		        <select id='location'>
+	              <option value="New York">New York</option>
+	              <option value="Atlanta">Atlanta</option>
+	              <option value="Memphis">Memphis</option>
+	              <option value="San Francisco">San Francisco</option>
+            	</select>
 
 		        <label>Industry</label>
-		        <input id='industry'/>
+		        <select id='industry'>
+	              <option value="Technology">Technology</option>
+	              <option value="Financial">Financial</option>
+	              <option value="Beauty">Beauty</option>
+	              <option value="Health">Health</option>
+            	</select>
 
 		        <p>Contact Person:</p>
 		        <label>First Name</label>

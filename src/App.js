@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/navBar';
-import LandingPage from './components/landingPage'; // Later, link to root Route below *********
+import LandingPage from './components/landingPage';
 import HomePage from './components/homePage';
 import MergerPage from './components/mergerPage';
 import AcquisitionPage from './components/acquisitionPage';
