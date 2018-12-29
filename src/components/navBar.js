@@ -19,15 +19,11 @@ export function NavBar(props) {
       );  
     }
     else {
-
       return (
-
         <nav role="navigation">
           <header>
             <h1>Merger</h1>         
           </header>          
-
-          <Link to="/signIn"><button>Sign In</button></Link>
         </nav>
       );
     }
