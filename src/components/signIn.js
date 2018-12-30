@@ -4,18 +4,50 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import store from '../store';
+import {fetchUserForSignIn} from '../actions';
 
-export default function SignIn(props) {    
+export class SignIn extends React.Component {    
 
-    return (
-      <div>
-        <label>Company Name</label>
-        <input/>
+    constructor(props) {
+    	super(props);
 
-        <label type='password'>Password</label>
-        <input/>
+    	this.state = {
+    		error: null
+    	}
+    }
 
-        <button type='Submit'>Submit</button>
-      </div>
-    );
-}
+    signIn = async (event) => {
+        event.preventDefault();
+        const userSignIn = {
+	    	name: document.getElementById('companyName').value,    
+	    	password: document.getElementById('password').value,
+	    }
+	    console.log(1, userSignIn);	 // *************************   	
+        
+        this.props.dispatch(fetchUserForSignIn(userSignIn));        
+    }
+
+    render() {
+    	return (
+	      <div>
+	        <p>{this.props.error}</p>
+	        <form>
+	        	<label>Company Name</label>
+		        <input id='companyName'/>
+
+		        <label>Password</label>
+		        <input id='password' type='password'/>
+
+		        <button type='Submit' onClick={(e) => this.signIn(e)}>Submit</button>
+	        </form>	        
+	      </div>
+    	);
+    }    
+} 
+
+const mapStateToProps = state => ({
+  
+  error: state.error
+})
+
+export default connect(mapStateToProps)(SignIn);

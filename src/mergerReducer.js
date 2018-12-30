@@ -3,7 +3,7 @@
 import * as actions from './actions';
 
 const initialState = {
-
+    error: null,
     user: null,
     mergerCompanies: [],
     acquisitionCompanies: [],
@@ -72,7 +72,20 @@ export const mergerReducer = (state=initialState, action) => {
         });
     }
 
+    if (action.type === actions.SIGN_USER_IN) {
+        return Object.assign({}, state, {
+           user: action.user 
+        });
+    }
 
+    if (action.type === actions.SIGN_USER_IN_ERROR) {
+        return Object.assign({}, state, {
+           error: action.error 
+        });
+    }
+
+
+    // *********************DEAL WITH THESE ******************************
     if (action.type === actions.UPDATE_USER_COMPANY) {
         return Object.assign({}, state, {
             

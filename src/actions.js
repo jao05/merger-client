@@ -174,13 +174,6 @@ export const createUserCompanyRequest = (signUpData) => dispatch => {
     });
 };
 
-
-export const SIGN_USER_OUT = 'SIGN_USER_OUT';
-export const signUserOut = () => ({
-    type: SIGN_USER_OUT,
-    user: null
-});
-
 export const ADD_USER_COMPANY_SUCCESS = 'ADD_USER_COMPANY_SUCCESS';
 export const addUserCompanySuccess = user => ({
     type: ADD_USER_COMPANY_SUCCESS,
@@ -193,6 +186,48 @@ export const addUserCompanyError = user => ({
     user
 });
 
+export const SIGN_USER_OUT = 'SIGN_USER_OUT';
+export const signUserOut = () => ({
+    type: SIGN_USER_OUT,
+    user: null
+});
+
+
+
+export const fetchUserForSignIn = (signInData) => dispatch => {
+    fetch(`${"http://localhost:8000"}/userCompany/login`, {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(signInData)
+    }).then(res => {
+        if (!res.ok) {
+            return Promise.reject(res.statusText);
+        }
+        return res.json();
+    })
+    .then(userCompany => {
+        console.log(userCompany); // **************************
+        dispatch(signUserIn(userCompany));
+    })
+    .catch(err => {
+        console.log(err);  // *******************      
+        dispatch(signUserInError('invalid login'));
+    });
+};
+
+export const SIGN_USER_IN = 'SIGN_USER_IN';
+export const signUserIn = (user) => ({
+    type: SIGN_USER_IN,
+    user
+});
+
+export const SIGN_USER_IN_ERROR = 'SIGN_USER_IN_ERROR';
+export const signUserInError = error => ({
+    type: SIGN_USER_IN_ERROR,
+    error
+});
 
 // #b. Update userCompany
 export const UPDATE_USER_COMPANY = 'UPDATE_USER_COMPANY';
