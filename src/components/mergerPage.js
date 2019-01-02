@@ -45,7 +45,7 @@ export class MergerPage extends React.Component {
           <h2>Merge</h2>
           <p>
             Grow your company by merging with one or more businesses that are similar to yours.
-            Enter search criteria to find companies that are interested.
+            Enter search criteria to find companies that are interested in making a deal.
           </p>
           <p>Contact those that interest you.</p>
 

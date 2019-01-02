@@ -2,16 +2,15 @@
 // After signing-up, the user is directed to the homePage
 
 import React from 'react';
-import {connect} from 'react-redux';
 import store from '../store';
 import {createUserCompanyRequest} from '../actions';
 
 export default class SignUp extends React.Component {    
 
-    constructor(props)  {
+    // constructor(props)  {
 
-      super(props);
-    }
+    //   super(props);
+    // }
 
     submitSignUp(event) {
     	console.log('HERE....'); // *******************************
@@ -33,7 +32,8 @@ export default class SignUp extends React.Component {
 	    	password: document.getElementById('password').value	
     	}
 
-    	store.dispatch(createUserCompanyRequest(userSignUp));  	
+    	store.dispatch(createUserCompanyRequest(userSignUp));
+    	this.props.history.push('/home'); 	
     }
 
     render() {

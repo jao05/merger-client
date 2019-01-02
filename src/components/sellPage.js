@@ -68,9 +68,7 @@ export class SellPage extends React.Component {
             <ul>{companyDivs}</ul>
           </div>
 
-          <ClearBtn />
-
-          <div id="potentialSellCompDetail">Company Details</div>
+          <ClearBtn />          
         </div>
       );  
     }    

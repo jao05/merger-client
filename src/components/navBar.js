@@ -2,14 +2,15 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import {signUserOut} from '../actions';
-import store from '../store'
+// import store from '../store'
 
 
 export class NavBar extends React.Component {
 
 
     signOut = () => {
-        this.props.dispatch(signUserOut())
+        this.props.dispatch(signUserOut());
+        this.props.history.push('/');     
     }
 
 
@@ -37,7 +38,7 @@ export class NavBar extends React.Component {
         </nav>
       );
     }
-    }
+  }
     
     
 

@@ -71,7 +71,7 @@ export const fetchAcquisitionCompaniesError = errMsg => ({
 
 // 3a. Action creator to fetch companies interested in buying other companies (async)
 export const fetchSellCompanies = (industry, location) => dispatch => {
-    fetch(`${"http://localhost:8000"}/userCompany/${industry}/${location}/sell`).then(res => {
+    fetch(`${API_BASE_URL}/userCompany/${industry}/${location}/sell`).then(res => {
         if (!res.ok) {
             return Promise.reject(res.statusText);
         }
@@ -105,7 +105,7 @@ export const fetchSellCompaniesError = errMsg => ({
 
 // 4a. Action creator to fetch expert companies
 export const fetchExpertCompanies = (type, location) => dispatch => {
-    fetch(`${"http://localhost:8000"}/experts/${type}/${location}`).then(res => {
+    fetch(`${API_BASE_URL}/experts/${type}/${location}`).then(res => {
         if (!res.ok) {
             return Promise.reject(res.statusText);
         }
@@ -153,7 +153,7 @@ export const clearSearchCompanies = () => ({
 
 // #a. Add userCompany********************************************
 export const createUserCompanyRequest = (signUpData) => dispatch => {
-    fetch(`${"http://localhost:8000"}/userCompany`, {
+    fetch(`${API_BASE_URL}/userCompany`, {
         method: 'POST',
         headers: {
             "Content-Type": "application/json"
@@ -195,7 +195,7 @@ export const signUserOut = () => ({
 
 
 export const fetchUserForSignIn = (signInData) => dispatch => {
-    fetch(`${"http://localhost:8000"}/userCompany/login`, {
+    fetch(`${API_BASE_URL}/userCompany/login`, {
         method: 'POST',
         headers: {
             "Content-Type": "application/json"
@@ -213,7 +213,7 @@ export const fetchUserForSignIn = (signInData) => dispatch => {
     })
     .catch(err => {
         console.log(err);  // *******************      
-        dispatch(signUserInError('invalid login'));
+        dispatch(signUserInError('INVALID LOGIN'));
     });
 };
 

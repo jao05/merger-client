@@ -24,7 +24,8 @@ export class SignIn extends React.Component {
 	    }
 	    console.log(1, userSignIn);	 // *************************   	
         
-        this.props.dispatch(fetchUserForSignIn(userSignIn));        
+        this.props.dispatch(fetchUserForSignIn(userSignIn));
+        this.props.history.push('/home');        
     }
 
     render() {

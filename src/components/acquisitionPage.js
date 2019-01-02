@@ -6,10 +6,10 @@ import ClearBtn from './clearBtn';
 
 export class AcquisitionPage extends React.Component {
     
-    constructor(props)  {
+    // constructor(props)  {
 
-      super(props);
-    }
+    //   super(props);
+    // }
 
     showAcquisitionComps(event) {
 
@@ -43,7 +43,7 @@ export class AcquisitionPage extends React.Component {
           <h2>Acquire</h2>
           <p>
             Grow your company by acquiring businesses that are similar to yours.
-            Enter search criteria to find companies that are interested.
+            Enter search criteria to find companies that are interested in making a deal.
           </p>
           <p>Contact those that interest you.</p>
 
@@ -71,9 +71,7 @@ export class AcquisitionPage extends React.Component {
             <ul>{companyDivs}</ul>
           </div>
 
-          <ClearBtn />
-
-          <div id="potentialAcqCompDetail">Company Details</div>
+          <ClearBtn />          
         </div>
       );
     }    
