@@ -22,10 +22,10 @@ export class SignIn extends React.Component {
 	    	name: document.getElementById('companyName').value,    
 	    	password: document.getElementById('password').value,
 	    }
-	    console.log(1, userSignIn);	 // *************************   	
+	    console.log(1, userSignIn);	 // ************************************************** 	
         
         this.props.dispatch(fetchUserForSignIn(userSignIn));
-        this.props.history.push('/home');        
+        this.props.history.push('/home'); // ********should only happen for valid users ***********************     
     }
 
     render() {
@@ -46,8 +46,7 @@ export class SignIn extends React.Component {
     }    
 } 
 
-const mapStateToProps = state => ({
-  
+const mapStateToProps = state => ({  
   error: state.error
 })
 

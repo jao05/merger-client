@@ -4,9 +4,7 @@ import NavBar from './navBar';
 
 export default function HomePage(props) {
     return (
-      <div id="homePage">
-        <h2>Home Page Header</h2>
-        
+      <div id="homePage">        
         <p>Find companies that are interested in merging.</p>
         <Link to="/merger"><button>Merger</button></Link>
 

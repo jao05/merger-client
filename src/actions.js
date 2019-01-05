@@ -1,9 +1,10 @@
 import {API_BASE_URL} from './config';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
 
 // 1a. Action creator to fetch companies interested in merging (async)
 export const fetchMergerCompanies = (industry, location) => dispatch => {
-    fetch(`${"http://localhost:8000"}/userCompany/${industry}/${location}/merger`).then(res => {
+    fetch(`${API_BASE_URL}/userCompany/${industry}/${location}/merger`).then(res => {
         if (!res.ok) {
             return Promise.reject(res.statusText);
         }
@@ -37,7 +38,7 @@ export const fetchMergerCompaniesError = errMsg => ({
 
 // 2a. Action creator to fetch companies interested in being acquired (async)
 export const fetchAcquisitionCompanies = (industry, location) => dispatch => {
-    fetch(`${"http://localhost:8000"}/userCompany/${industry}/${location}/acquisition`).then(res => {
+    fetch(`${API_BASE_URL}/userCompany/${industry}/${location}/acquisition`).then(res => {
         if (!res.ok) {
             return Promise.reject(res.statusText);
         }
@@ -208,12 +209,14 @@ export const fetchUserForSignIn = (signInData) => dispatch => {
         return res.json();
     })
     .then(userCompany => {
-        console.log(userCompany); // **************************
-        dispatch(signUserIn(userCompany));
+        console.log(userCompany); // ***********************************************
+        dispatch(signUserIn(userCompany));        
+        // this.props.history.push('/home');
+        
     })
     .catch(err => {
-        console.log(err);  // *******************      
-        dispatch(signUserInError('INVALID LOGIN'));
+        console.log(err);  // **********************************************      
+        dispatch(signUserInError('INVALID LOGIN'));        
     });
 };
 
