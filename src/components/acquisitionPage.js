@@ -48,21 +48,26 @@ export class AcquisitionPage extends React.Component {
           <p>Contact those that interest you.</p>
 
           <form>
-            <label>Industry</label>
-            <select id='industry'>
-              <option value="Technology">Technology</option>
-              <option value="Financial">Financial</option>
-              <option value="Beauty">Beauty</option>
-              <option value="Health">Health</option>
-            </select>
+            <div className='inputDiv'>
+              <label>Industry</label>
+              <select id='industry'>
+                <option value="Technology">Technology</option>
+                <option value="Financial">Financial</option>
+                <option value="Beauty">Beauty</option>
+                <option value="Health">Health</option>
+              </select>
+            </div>
+            
 
-            <label>Location</label>
-            <select id='location'>
-              <option value="New York">New York</option>
-              <option value="Atlanta">Atlanta</option>
-              <option value="Memphis">Memphis</option>
-              <option value="San Francisco">San Francisco</option>
-            </select>          
+            <div className='inputDiv'>
+              <label>Location</label>
+              <select id='location'>
+                <option value="New York">New York</option>
+                <option value="Atlanta">Atlanta</option>
+                <option value="Memphis">Memphis</option>
+                <option value="San Francisco">San Francisco</option>
+              </select>
+            </div>                      
 
             <button onClick={this.showAcquisitionComps}>Search</button>
           </form>

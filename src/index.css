@@ -13,6 +13,11 @@ code {
     monospace;
 }
 
+h2 {
+	font-size: 2em;
+	margin-top: 5%;
+}
+
 button {
 	color: white;
 	background-color: blue;
@@ -22,13 +27,26 @@ button {
 
 button {
 	margin: 10% 5%;
-	width: 20%;
+	width: 15%;
 	padding: 2%;
 	font-size: 1.5em;
 }
 
 button:hover {   
-  width: 25%;
+  width: 20%;
   padding: 3%;
   box-shadow: 8px 8px 8px black;
+}
+
+.inputDiv {
+	margin-top: 5%;
+	font-size: 1.5em;
+}
+
+select {
+	font-size: 1em;
+}
+
+.resultDiv {
+	border: 1px solid black;
 }

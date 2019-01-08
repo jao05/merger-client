@@ -36,20 +36,24 @@ export class ExpertPage extends React.Component {
         <div id="expertPage">
           <h2>Find an Expert</h2>
           <p>Get expert help to close your deal.</p>
-          <p>Enter criteria to find them and contact those that interest you.</p>
+          <p>Enter criteria to find them and then contact those that interest you.</p>
 
           <form>
-            <label>Type</label>
-            <select id='type'>
-              <option value="Legal">Legal</option>
-              <option value="Financial">Financial</option>
-            </select>
+            <div className='inputDiv'>
+              <label>Type</label>
+              <select id='type'>
+                <option value="Legal">Legal</option>
+                <option value="Financial">Financial</option>
+              </select>
+            </div>            
 
-            <label>Location</label>
-            <select id='location'>
-              <option value="New York">New York</option>
-              <option value="Boston">Boston</option>
-            </select>          
+            <div className='inputDiv'>
+              <label>Location</label>
+              <select id='location'>
+                <option value="New York">New York</option>
+                <option value="Boston">Boston</option>
+              </select>
+            </div>                      
 
             <button onClick={this.showExperts}>Search</button>
           </form>

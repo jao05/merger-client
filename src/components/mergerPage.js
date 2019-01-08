@@ -1,8 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
+
 import {fetchMergerCompanies} from '../actions';
 import store from '../store';
 import ClearBtn from './clearBtn';
+import './mergerPage.css';
 
 export class MergerPage extends React.Component {
     
@@ -29,12 +31,18 @@ export class MergerPage extends React.Component {
       let companyDivs = this.props.companies.map((company, index) => { // ****index not working properly ******        
 
         return ( 
-          <div key={index} value={index}>
-            Name: {company.name} 
-            Industry: {company.industry} 
-            Location: {company.location} 
-            Description: {company.description}
-            Contact: {company.contact.firstName} {company.contact.lastName} at {company.contact.email} 
+          <div className='resultDiv' key={index} value={index}>
+            <p>
+              Name: {company.name} 
+              Industry: {company.industry} 
+              Location: {company.location} 
+            </p>
+            <p>
+              Description: {company.description}
+            </p>
+            <p>
+              Contact {company.contact.firstName} {company.contact.lastName} at {company.contact.email} 
+            </p>
           </div>
         )
       });   
@@ -50,21 +58,26 @@ export class MergerPage extends React.Component {
           <p>Contact those that interest you.</p>
 
           <form>
-            <label>Industry</label>
-            <select id='industry'>
-              <option value="Technology">Technology</option>
-              <option value="Financial">Financial</option>
-              <option value="Beauty">Beauty</option>
-              <option value="Health">Health</option>
-            </select>
+            <div className='inputDiv'>
+              <label>Industry</label>
+              <select id='industry'>
+                <option value="Technology">Technology</option>
+                <option value="Financial">Financial</option>
+                <option value="Beauty">Beauty</option>
+                <option value="Health">Health</option>
+              </select>
+            </div>
+            
 
-            <label>Location</label>
-            <select id='location'>
-              <option value="New York">New York</option>
-              <option value="Atlanta">Atlanta</option>
-              <option value="Memphis">Memphis</option>
-              <option value="San Francisco">San Francisco</option>
-            </select>          
+            <div className='inputDiv'>
+              <label>Location</label>
+              <select id='location'>
+                <option value="New York">New York</option>
+                <option value="Atlanta">Atlanta</option>
+                <option value="Memphis">Memphis</option>
+                <option value="San Francisco">San Francisco</option>
+              </select>
+            </div>                      
 
             <button onClick={this.showMergerComps}>Search</button>
           </form>
