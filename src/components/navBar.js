@@ -2,14 +2,16 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import {signUserOut} from '../actions';
-import store from '../store'
+import store from '../store';
+import './navBar.css';
 
 
 export class NavBar extends React.Component {
 
     signOut = () => {
-        this.props.dispatch(signUserOut());
-        //this.props.history.push('/'); // *** App should redirect to landingPage after user signs out ********
+      console.log('HERE......'); // ***************************************
+      this.props.dispatch(signUserOut());
+      //this.props.history.push('/'); // *** App should redirect to landingPage after user signs out ********
     }
 
 

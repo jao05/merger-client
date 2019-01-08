@@ -6,6 +6,8 @@ import {connect} from 'react-redux';
 import store from '../store';
 import {fetchUserForSignIn} from '../actions';
 
+import './signIn.css';
+
 export class SignIn extends React.Component {    
 
     constructor(props) {
@@ -33,11 +35,18 @@ export class SignIn extends React.Component {
 	      <div>
 	        <p>{this.props.error}</p>
 	        <form>
-	        	<label>Company Name</label>
-		        <input id='companyName'/>
-
-		        <label>Password</label>
-		        <input id='password' type='password'/>
+	        	<div id='divWrapper'>
+                    <div className='inputDiv'>
+                        <label>Company Name</label>
+                        <input id='companyName'/>
+                    </div>
+                
+                    <div className='inputDiv'>
+                        <label>Password</label>
+                        <input id='password' type='password'/>
+                    </div>
+                </div>
+                  
 
 		        <button type='Submit' onClick={(e) => this.signIn(e)}>Submit</button>
 	        </form>	        

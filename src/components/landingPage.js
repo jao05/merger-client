@@ -4,6 +4,7 @@ import React from 'react';
 // import {connect} from 'react-redux';
 // import store from '../store';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import './landingPage.css';
 
 export default function LandingPage(props) {    
 

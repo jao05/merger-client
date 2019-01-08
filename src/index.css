@@ -12,3 +12,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+button {
+	color: white;
+	background-color: blue;
+	border: transparent;
+	box-shadow: 5px 5px 8px black;
+}
+
+button {
+	margin: 10% 5%;
+	width: 20%;
+	padding: 2%;
+	font-size: 1.5em;
+}
+
+button:hover {   
+  width: 25%;
+  padding: 3%;
+  box-shadow: 8px 8px 8px black;
+}
