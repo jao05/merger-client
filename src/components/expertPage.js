@@ -28,7 +28,16 @@ export class ExpertPage extends React.Component {
       console.log(this.props.companies); // *******************************
       const companyDivs = this.props.companies.map((company, index) => { // ****index not working properly ******
         return (
-            <li key={index}>{company.name} {company.industry} {company.location}</li>
+            <div className='resultDiv' key={index} value={index}>
+            <p>
+              Name: {company.name} 
+              Industry: {company.type} 
+              Location: {company.location} 
+            </p>            
+            <p>
+              Contact {company.contact.firstName} {company.contact.lastName} at {company.contact.email} 
+            </p>
+          </div>
           )
       });
 
