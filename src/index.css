@@ -13,6 +13,10 @@ code {
     monospace;
 }
 
+nav {
+	height: 15%;
+}
+
 h2 {
 	font-size: 2em;
 	margin-top: 5%;
@@ -20,7 +24,7 @@ h2 {
 
 button {
 	color: white;
-	background-color: blue;
+	background-color: #4257E8;
 	border: transparent;
 	box-shadow: 5px 5px 8px gray;
 }

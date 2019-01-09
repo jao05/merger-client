@@ -26,12 +26,15 @@ export class SignIn extends React.Component {
 	    }
 	    console.log(1, userSignIn);	 // ************************************************** 	
         
-        this.props.dispatch(fetchUserForSignIn(userSignIn));
-        this.props.history.push('/home'); // ********should only happen for valid users ***********************     
+        this.props.dispatch(fetchUserForSignIn(userSignIn, ()=>{
+            this.props.history.push('/home');
+        }));        
     }
 
     render() {
-    	return (
+    	console.log(this.props.authentication); // ***************                
+
+        return (
 	      <div>
 	        <p>{this.props.error}</p>
 	        <form>
@@ -56,7 +59,8 @@ export class SignIn extends React.Component {
 } 
 
 const mapStateToProps = state => ({  
-  error: state.error
+  error: state.error,
+  authentication: state.authentication
 })
 
 export default connect(mapStateToProps)(SignIn);

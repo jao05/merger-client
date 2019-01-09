@@ -195,7 +195,7 @@ export const signUserOut = () => ({
 
 
 
-export const fetchUserForSignIn = (signInData) => dispatch => {
+export const fetchUserForSignIn = (signInData, callBack) => dispatch => {
     fetch(`${API_BASE_URL}/userCompany/login`, {
         method: 'POST',
         headers: {
@@ -210,13 +210,16 @@ export const fetchUserForSignIn = (signInData) => dispatch => {
     })
     .then(userCompany => {
         console.log(userCompany); // ***********************************************
-        dispatch(signUserIn(userCompany));        
-        // this.props.history.push('/home');
+        dispatch(signUserIn(userCompany));
+        callBack();
+        //dispatch(updateAuthInStore({authentication: true}));
+        // this.props.history.push('/home'); **************************
         
     })
     .catch(err => {
         console.log(err);  // **********************************************      
-        dispatch(signUserInError('INVALID LOGIN'));        
+        dispatch(signUserInError('INVALID LOGIN'));
+        //this.props.history.push('/'); *************************************     
     });
 };
 
@@ -245,4 +248,11 @@ export const DELETE_USER_COMPANY = 'DELETE_USER_COMPANY';
 export const deleteUserCompany = company => ({
     type: DELETE_USER_COMPANY,
     company
+});
+
+// Update auth in store
+export const UPDATE_AUTH_IN_STORE = 'UPDATE_AUTH_IN_STORE';
+export const updateAuthInStore = autentication => ({
+    type: UPDATE_AUTH_IN_STORE,
+    autentication
 });

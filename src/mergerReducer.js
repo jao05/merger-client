@@ -8,7 +8,8 @@ const initialState = {
     mergerCompanies: [],
     acquisitionCompanies: [],
     sellCompanies: [],
-    expertCompanies: []
+    expertCompanies: [],
+    authentication: false
 };
 
 export const mergerReducer = (state=initialState, action) => {
@@ -74,7 +75,14 @@ export const mergerReducer = (state=initialState, action) => {
 
     if (action.type === actions.SIGN_USER_IN) {
         return Object.assign({}, state, {
-           user: action.user 
+           user: action.user,
+           authentication: true
+        });
+    }
+
+    if (action.type === actions.UPDATE_AUTH_IN_STORE) {
+        return Object.assign({}, state, {           
+           authentication: action.authentication
         });
     }
 

@@ -46,7 +46,7 @@ export class MergerPage extends React.Component {
           </div>
         )
       });   
-      console.log(companyDivs); // *********************DEAL WITH THIS ***********************
+      console.log(companyDivs); // ******DEAL WITH THIS *******just create more comps in db********
       if(companyDivs.length == 0){
         companyDivs = 'Sorry, no companies fit your criteria.';
       }

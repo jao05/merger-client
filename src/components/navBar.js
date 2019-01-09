@@ -23,9 +23,9 @@ export class NavBar extends React.Component {
         return (
           <nav role="navigation">
             <header>
-              <h1>Merger</h1>         
+              <h1><Link to="/home">Merger</Link></h1>         
             </header>
-            <p>Signed in as {this.props.user.name}</p>
+            <span>Signed in as {this.props.user.name}</span>
             <button onClick={() => this.signOut()}>Sign Out</button>
           </nav>
         );  
