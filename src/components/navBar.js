@@ -1,3 +1,6 @@
+// Use to fix landingPage re-route issue
+import { withRouter } from "react-router";
+
 import React from 'react';
 import {connect} from 'react-redux';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
@@ -11,7 +14,7 @@ export class NavBar extends React.Component {
     signOut = () => {
       console.log('HERE......'); // ***************************************
       this.props.dispatch(signUserOut());
-      //this.props.history.push('/'); // *** App should redirect to landingPage after user signs out ********
+      this.props.history.push('/'); // *** App should redirect to landingPage after user signs out ********
     }
 
 
@@ -43,4 +46,4 @@ export const mapStateToProps = state => ({
   user: state.user
 });
 
-export default connect(mapStateToProps)(NavBar);
+export default withRouter(connect(mapStateToProps)(NavBar));
