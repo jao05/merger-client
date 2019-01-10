@@ -12,7 +12,8 @@ export default function LandingPage(props) {
       <div>
         <p>
         	Welcome to Merger where small business owners who are fed up with being small
-        	connect with each other to build larger, stronger organizations.
+        	connect with each other to build larger, stronger organizations. To perform a  
+             <span id='redDemo'> demo login</span>, use "demo" for both the username and password.
         </p>
 
         <Link to="/signIn"><button>Sign In</button></Link>

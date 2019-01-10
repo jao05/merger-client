@@ -7,10 +7,10 @@ import store from '../store';
 
 export class ClearBtn extends React.Component {
 
-	constructor(props)  {
+	// constructor(props)  {
 
-      super(props);
-    }
+ //      super(props);
+ //    }
 
     
     clearCompResults () {

@@ -26,6 +26,12 @@ export class EditProfilePage extends React.Component {
 		store.dispatch(createUserCompanyUpdate(userProfileEdits));
 	}
 
+	cancelChanges(event) {
+		event.preventDefault();
+		console.log('CANCELLING....'); // ****************************************
+		this.props.history.push('/home');
+	}
+
 	render() {
 		
 		return (
@@ -69,6 +75,7 @@ export class EditProfilePage extends React.Component {
 					</select>
 
 					<button type='Submit'>Save Changes</button>
+					<button onClick={e => this.cancelChanges(e)}>Cancel</button>
 				</form>
 			</div>
 		);		

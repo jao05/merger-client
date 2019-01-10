@@ -49,9 +49,10 @@ export class ExpertPage extends React.Component {
       return (
         <div id="expertPage">
           <h2>Find an Expert</h2>
-          <p>Get expert help to close your deal.</p>
-          <p>Enter criteria to find them and then contact those that interest you.</p>
-
+          <p>
+            Get expert help to close your deal. Enter criteria to find them and then contact those that interest you.
+          </p>
+          
           <form>
             <div className='inputDiv'>
               <label>Type</label>
