@@ -25,21 +25,26 @@ export class ExpertPage extends React.Component {
 
     render() {
 
-      console.log(this.props.companies); // *******************************
-      const companyDivs = this.props.companies.map((company, index) => { // ****index not working properly ******
-        return (
+      const {companies, message} = this.props
+      let companyDivs;
+        
+      if(companies && companies.length > 0){
+        companyDivs = this.props.companies.map((company, index) => { // ****index not working properly ******        
+          return ( 
             <div className='resultDiv' key={index} value={index}>
-            <p>
-              Name: {company.name} 
-              Industry: {company.type} 
-              Location: {company.location} 
-            </p>            
-            <p>
-              Contact {company.contact.firstName} {company.contact.lastName} at {company.contact.email} 
-            </p>
-          </div>
+              <p>
+                Name: {company.name} 
+                Industry: {company.type} 
+                Location: {company.location} 
+              </p>
+              
+              <p>
+                Contact {company.contact.firstName} at {company.name} 
+              </p>
+            </div>
           )
-      });
+        });
+      }
 
       return (
         <div id="expertPage">
@@ -70,7 +75,8 @@ export class ExpertPage extends React.Component {
           <div id="selectExpertSection">            
             
             <ul>
-              {companyDivs}
+              {message}
+              {companyDivs}              
             </ul>
               
             <ClearBtn />            

@@ -10,6 +10,7 @@ import SellPage from './components/sellPage';
 import ExpertPage from './components/expertPage';
 import SignIn from './components/signIn';
 import SignUp from './components/signUp';
+import EditProfilePage from './components/editProfilePage';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
 class App extends Component {
@@ -28,6 +29,7 @@ class App extends Component {
         		<Route exact path="/expert" component={ExpertPage}/>
             <Route exact path="/signIn" component={SignIn}/>
             <Route exact path="/signUp" component={SignUp}/>
+            <Route exact path="/editProfile" component={EditProfilePage}/>
         	</main>        
       	</div>
       </Router>      

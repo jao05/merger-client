@@ -2,7 +2,7 @@ nav {
 	border-bottom: 1px solid gray;
 }
 
-h1 {
+#logo {
 	color: #4257E8;
 	padding-left: 3%;
 	text-align: left;
@@ -17,5 +17,6 @@ a:visited {
 }
 
 p {
-	display: inline-block;
+	margin-top: 1%;
+	margin-bottom: 1%;	
 }

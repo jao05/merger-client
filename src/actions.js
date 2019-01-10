@@ -123,7 +123,7 @@ export const fetchExpertCompanies = (type, location) => dispatch => {
     })
     .then(companies => {
         console.log(companies); // **************************
-        if(companies.length === 0) {
+        if(companies.companies.length === 0) {
             dispatch(setMessage('Sorry, no companies fit your criteria.'));    
         }
         dispatch(fetchExpertCompaniesSuccess(companies));
@@ -166,18 +166,6 @@ export const setMessage = (message) => ({
     type: SET_MESSAGE,
     message
 });
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -264,12 +252,55 @@ export const signUserInError = error => ({
     error
 });
 
-// #b. Update userCompany
-export const UPDATE_USER_COMPANY = 'UPDATE_USER_COMPANY';
-export const updateUserCompany = user => ({
-    type: UPDATE_USER_COMPANY,
+
+
+// Update auth in store
+export const UPDATE_AUTH_IN_STORE = 'UPDATE_AUTH_IN_STORE';
+export const updateAuthInStore = autentication => ({
+    type: UPDATE_AUTH_IN_STORE,
+    autentication
+});
+
+
+
+
+export const createUserCompanyUpdate = (updateData) => dispatch => {
+    fetch(`${API_BASE_URL}/userCompany/edit/${updateData.id}`, { // ***updateData.id is undefined *************
+        method: 'PUT',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(updateData)
+    }).then(res => {
+        if (!res.ok) {
+            return Promise.reject(res.statusText);
+        }
+        return res.json();
+    })
+    .then(userCompany => {
+        console.log(userCompany); // **************************
+        dispatch(updateUserCompanySuccess(userCompany));
+    })
+    .catch(err => {
+        dispatch(updateUserCompanyError(err));
+    });
+};
+
+
+
+export const UPDATE_USER_COMPANY_SUCCESS = 'UPDATE_USER_COMPANY_SUCCESS';
+export const updateUserCompanySuccess = user => ({
+    type: UPDATE_USER_COMPANY_SUCCESS,
     user
 });
+
+
+export const UPDATE_USER_COMPANY_ERROR = 'UPDATE_USER_COMPANY_ERROR';
+export const updateUserCompanyError = user => ({
+    type: UPDATE_USER_COMPANY_ERROR,
+    user
+});
+
 
 
 // #c. Delete userCompany
@@ -277,11 +308,4 @@ export const DELETE_USER_COMPANY = 'DELETE_USER_COMPANY';
 export const deleteUserCompany = company => ({
     type: DELETE_USER_COMPANY,
     company
-});
-
-// Update auth in store
-export const UPDATE_AUTH_IN_STORE = 'UPDATE_AUTH_IN_STORE';
-export const updateAuthInStore = autentication => ({
-    type: UPDATE_AUTH_IN_STORE,
-    autentication
 });

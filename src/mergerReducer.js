@@ -77,7 +77,7 @@ export const mergerReducer = (state=initialState, action) => {
 
     if (action.type === actions.ADD_USER_COMPANY_SUCCESS) {
         return Object.assign({}, state, {
-           user: action.user 
+           user: action.user
         });
     }
 
@@ -102,9 +102,16 @@ export const mergerReducer = (state=initialState, action) => {
 
 
     // *********************DEAL WITH THESE ******************************
-    if (action.type === actions.UPDATE_USER_COMPANY) {
+    if (action.type === actions.UPDATE_USER_COMPANY_SUCCESS) {
         return Object.assign({}, state, {
-            
+            user: action.user
+        });
+    }
+
+
+    if (action.type === actions.UPDATE_USER_COMPANY_ERROR) {
+        return Object.assign({}, state, {
+            error: action.error
         });
     }
 

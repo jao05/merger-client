@@ -16,6 +16,22 @@ export class NavBar extends React.Component {
       this.props.dispatch(signUserOut());
       this.props.history.push('/'); // *** App should redirect to landingPage after user signs out ********
     }
+    
+    editProfile = (event) => {
+      event.preventDefault();
+
+
+      // Dispatch action
+      console.log('EDITING....'); // ******************************
+      this.props.history.push('/editProfilePage');
+    }
+
+    deactivateAccount = (event) => {
+      event.preventDefault();
+
+      // Dispatch action
+      console.log('DEACTIVATING....'); // ******************************
+    }
 
 
     render(){
@@ -23,10 +39,14 @@ export class NavBar extends React.Component {
         return (
           <nav role="navigation">
             <header>
-              <h1><Link to="/home">Merger</Link></h1>         
+              <p id='logo'><Link to="/home">Merger</Link></p>         
             </header>
-            <span>Signed in as {this.props.user.name}</span>
+            <p>Signed in as {this.props.user.name}</p>
+            <p>Location: {this.props.user.location}</p>
+            <p>Industry: {this.props.user.industry}</p>
             <button onClick={() => this.signOut()}>Sign Out</button>
+            <Link to="/editProfile"><button >Edit Profile</button></Link>
+            <button onClick={(e) => this.deactivateAccount(e)}>Deactivate Account</button>
           </nav>
         );  
       }

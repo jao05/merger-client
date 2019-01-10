@@ -54,8 +54,8 @@ export class AcquisitionPage extends React.Component {
           <p>
             Grow your company by acquiring businesses that are similar to yours.
             Enter search criteria to find companies that are interested in making a deal.
-          </p>
-          <p>Contact those that interest you.</p>
+            Contact those that interest you.
+          </p>          
 
           <form>
             <div className='inputDiv'>
