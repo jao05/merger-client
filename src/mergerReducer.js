@@ -9,7 +9,8 @@ const initialState = {
     acquisitionCompanies: [],
     sellCompanies: [],
     expertCompanies: [],
-    authentication: false
+    authentication: false,
+    message: null
 };
 
 export const mergerReducer = (state=initialState, action) => {
@@ -48,6 +49,13 @@ export const mergerReducer = (state=initialState, action) => {
             acquisitionCompanies: [],
             sellCompanies: [],
             expertCompanies: []
+        }); 
+    }
+
+
+    if (action.type === actions.SET_MESSAGE) { 
+        return Object.assign({}, state, { 
+            message: action.message
         }); 
     }
 

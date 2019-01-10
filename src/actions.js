@@ -12,6 +12,9 @@ export const fetchMergerCompanies = (industry, location) => dispatch => {
     })
     .then(companies => {
         console.log(companies); // **************************
+        if(companies.companies.length === 0) {
+            dispatch(setMessage('Sorry, no companies fit your criteria.'));    
+        }        
         dispatch(fetchMergerCompaniesSuccess(companies));
     })
     .catch(err => {
@@ -46,6 +49,9 @@ export const fetchAcquisitionCompanies = (industry, location) => dispatch => {
     })
     .then(companies => {
         console.log(companies); // **************************
+        if(companies.companies.length === 0) {
+            dispatch(setMessage('Sorry, no companies fit your criteria.'));    
+        }
         dispatch(fetchAcquisitionCompaniesSuccess(companies));
     })
     .catch(err => {
@@ -80,6 +86,9 @@ export const fetchSellCompanies = (industry, location) => dispatch => {
     })
     .then(companies => {
         console.log(companies); // **************************
+        if(companies.length === 0) {
+            dispatch(setMessage('Sorry, no companies fit your criteria.'));    
+        }
         dispatch(fetchSellCompaniesSuccess(companies));
     })
     .catch(err => {
@@ -114,6 +123,9 @@ export const fetchExpertCompanies = (type, location) => dispatch => {
     })
     .then(companies => {
         console.log(companies); // **************************
+        if(companies.length === 0) {
+            dispatch(setMessage('Sorry, no companies fit your criteria.'));    
+        }
         dispatch(fetchExpertCompaniesSuccess(companies));
     })
     .catch(err => {
@@ -146,6 +158,23 @@ export const clearSearchCompanies = () => ({
     acquistionCompanies: [],
     sellCompanies: []
 });
+
+
+// 5. If no companies are return from api, display appropriate message
+export const SET_MESSAGE = 'SET_MESSAGE';
+export const setMessage = (message) => ({
+    type: SET_MESSAGE,
+    message
+});
+
+
+
+
+
+
+
+
+
 
 
 

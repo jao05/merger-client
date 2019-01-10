@@ -89,7 +89,8 @@ export class SellPage extends React.Component {
 
 const mapStateToProps = state => ({
   
-  companies: state.sellCompanies
+  companies: state.sellCompanies,
+  message: state.message
 }) 
 
 export default connect(mapStateToProps)(SellPage);

@@ -23,26 +23,30 @@ export class AcquisitionPage extends React.Component {
 
     }
 
-    render() {
+    render() {    
 
-      console.log(this.props.companies); // *******************************
-      const companyDivs = this.props.companies.map((company, index) => { // ****index not working properly ******
-        return (
-          <div className='resultDiv' key={index} value={index}>
-            <p>
-              Name: {company.name} 
-              Industry: {company.industry} 
-              Location: {company.location} 
-            </p>
-            <p>
-              Description: {company.description}
-            </p>
-            <p>
-              Contact {company.contact.firstName} {company.contact.lastName} at {company.contact.email} 
-            </p>
-          </div>
-        )
-      });
+      const {companies, message} = this.props
+      let companyDivs;
+
+      if(companies && companies.length > 0){
+        companyDivs = this.props.companies.map((company, index) => { // ****index not working properly ******        
+          return ( 
+            <div className='resultDiv' key={index} value={index}>
+              <p>
+                Name: {company.name} 
+                Industry: {company.industry} 
+                Location: {company.location} 
+              </p>
+              <p>
+                Description: {company.description}
+              </p>
+              <p>
+                Contact {company.contact.firstName} {company.contact.lastName} at {company.contact.email} 
+              </p>
+            </div>
+          )
+        });
+      }
 
       return (
         <div id="acquisitionPage">
@@ -79,6 +83,7 @@ export class AcquisitionPage extends React.Component {
           </form>
 
           <div id="potentialAcqComps">
+            <p>{message}</p>
             <ul>{companyDivs}</ul>
           </div>
 
@@ -91,7 +96,8 @@ export class AcquisitionPage extends React.Component {
 
 const mapStateToProps = state => ({
   
-  companies: state.acquisitionCompanies
+  companies: state.acquisitionCompanies,
+  message: state.message
 }) 
 
 export default connect(mapStateToProps)(AcquisitionPage);

@@ -27,29 +27,28 @@ export class MergerPage extends React.Component {
     
 
     render() {
-      console.log(this.props.companies); // *******************************
-      let companyDivs = this.props.companies.map((company, index) => { // ****index not working properly ******        
+      const {companies, message} = this.props
+      let companyDivs;
 
-        return ( 
-          <div className='resultDiv' key={index} value={index}>
-            <p>
-              Name: {company.name} 
-              Industry: {company.industry} 
-              Location: {company.location} 
-            </p>
-            <p>
-              Description: {company.description}
-            </p>
-            <p>
-              Contact {company.contact.firstName} {company.contact.lastName} at {company.contact.email} 
-            </p>
-          </div>
-        )
-      });   
-      console.log(companyDivs); // ******DEAL WITH THIS *******just create more comps in db********
-      if(companyDivs.length == 0){
-        companyDivs = 'Sorry, no companies fit your criteria.';
-      }
+      if(companies && companies.length > 0){
+        companyDivs = this.props.companies.map((company, index) => { // ****index not working properly ******        
+          return ( 
+            <div className='resultDiv' key={index} value={index}>
+              <p>
+                Name: {company.name} 
+                Industry: {company.industry} 
+                Location: {company.location} 
+              </p>
+              <p>
+                Description: {company.description}
+              </p>
+              <p>
+                Contact {company.contact.firstName} {company.contact.lastName} at {company.contact.email} 
+              </p>
+            </div>
+          )
+        });
+      }      
 
       return (
         <div id="mergerPage">
@@ -86,6 +85,7 @@ export class MergerPage extends React.Component {
           </form>
 
           <div id="potentialMergComps">
+            <p>{message}</p>
             <ul>{companyDivs}</ul>            
           </div>
           
@@ -99,7 +99,8 @@ export class MergerPage extends React.Component {
 
 const mapStateToProps = state => ({
   
-  companies: state.mergerCompanies
+  companies: state.mergerCompanies,
+  message: state.message
 }) 
 
 export default connect(mapStateToProps)(MergerPage);
