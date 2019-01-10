@@ -24,25 +24,28 @@ export class SellPage extends React.Component {
     }
 
     render() {
-
-      console.log(this.props.companies); // *******************************
-      const companyDivs = this.props.companies.map((company, index) => { // ****index not working properly ******
-        return (
+      const {companies, message} = this.props
+      let companyDivs;
+        
+      if(companies && companies.length > 0){
+        companyDivs = this.props.companies.map((company, index) => { // ****index not working properly ******        
+          return ( 
             <div className='resultDiv' key={index} value={index}>
-            <p>
-              Name: {company.name} 
-              Industry: {company.industry} 
-              Location: {company.location} 
-            </p>
-            <p>
-              Description: {company.description}
-            </p>
-            <p>
-              Contact {company.contact.firstName} {company.contact.lastName} at {company.contact.email} 
-            </p>
-          </div>
-        )
-      });
+              <p>
+                Name: {company.name} 
+                Industry: {company.industry} 
+                Location: {company.location} 
+              </p>
+              <p>
+                Description: {company.description}
+              </p>
+              <p>
+                Contact {company.contact.firstName} {company.contact.lastName} at {company.contact.email} 
+              </p>
+            </div>
+          )
+        });
+      }
 
       return (
         <div id="sellPage">
@@ -77,6 +80,7 @@ export class SellPage extends React.Component {
           </form>
 
           <div id="potentialSellComps">
+            <p>{message}</p>
             <ul>{companyDivs}</ul>
           </div>
 

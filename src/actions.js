@@ -86,7 +86,7 @@ export const fetchSellCompanies = (industry, location) => dispatch => {
     })
     .then(companies => {
         console.log(companies); // **************************
-        if(companies.length === 0) {
+        if(companies.companies.length === 0) {
             dispatch(setMessage('Sorry, no companies fit your criteria.'));    
         }
         dispatch(fetchSellCompaniesSuccess(companies));
