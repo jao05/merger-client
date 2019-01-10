@@ -29,7 +29,7 @@ export class NavBar extends React.Component {
       event.preventDefault();
 
       // Dispatch action
-      console.log('DEACTIVATING....'); // ******************************
+      this.props.history.push('/deactivatePage');
     }
 
 

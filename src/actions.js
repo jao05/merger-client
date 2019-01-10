@@ -303,8 +303,38 @@ export const updateUserCompanyError = user => ({
 
 
 // #c. Delete userCompany
-export const DELETE_USER_COMPANY = 'DELETE_USER_COMPANY';
-export const deleteUserCompany = company => ({
-    type: DELETE_USER_COMPANY,
+export const deleteUserCompanyRequest = (deleteData) => dispatch => {
+    fetch(`${API_BASE_URL}/userCompany/${deleteData.id}`, { 
+        method: 'DELETE',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(deleteData)
+    }).then(res => {
+        if (!res.ok) {
+            return Promise.reject(res.statusText);
+        }
+        return res.json();
+    })
+    .then(userCompany => {
+        console.log('COMPANY WAS DELETED...'); // **************************
+        dispatch(deleteUserCompanySuccess(userCompany));
+    })
+    .catch(err => {
+        dispatch(deleteUserCompanyError(err));
+    });
+};
+
+
+export const DELETE_USER_COMPANY_SUCCESS = 'DELETE_USER_COMPANY_SUCCESS';
+export const deleteUserCompanySuccess = company => ({
+    type: DELETE_USER_COMPANY_SUCCESS,
+    company
+});
+
+
+export const DELETE_USER_COMPANY_ERROR = 'DELETE_USER_COMPANY_ERROR';
+export const deleteUserCompanyError = company => ({
+    type: DELETE_USER_COMPANY_ERROR,
     company
 });

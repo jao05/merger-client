@@ -9,7 +9,7 @@ export class EditProfilePage extends React.Component {
 		event.preventDefault();
 
 		const userProfileEdits = {
-			id: this.props.user.id,
+			id: this.props.user._id,
 			name: document.getElementById('editCompanyName').value,    
 		    location: document.getElementById('editLocation').value,	    	
 		    industry: document.getElementById('editIndustry').value,
@@ -17,13 +17,12 @@ export class EditProfilePage extends React.Component {
 		    openToAcquisition: document.getElementById('editOpenToAcquisition').value,    
 		    openToSell: document.getElementById('editOpenToSell').value,	    	    
 		}
-
+		console.log('ID is...', this.props.user); // **********************************************
 		store.dispatch(createUserCompanyUpdate(userProfileEdits));
 	}
 
 	cancelChanges(event) {
-		event.preventDefault();
-		console.log('CANCELLING....'); // ****************************************
+		event.preventDefault();		
 		this.props.history.push('/home');
 	}
 
