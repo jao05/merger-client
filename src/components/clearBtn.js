@@ -6,13 +6,7 @@ import {connect} from 'react-redux';
 import store from '../store';
 
 export class ClearBtn extends React.Component {
-
-	// constructor(props)  {
-
- //      super(props);
- //    }
-
-    
+	    
     clearCompResults () {
 
     	// Dispatch action to clear 'companies' array located in the store?

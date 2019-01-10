@@ -6,11 +6,6 @@ import ClearBtn from './clearBtn';
 
 export class ExpertPage extends React.Component {
     
-    constructor(props)  {
-
-      super(props);
-    }
-
     showExperts(event) {
 
       event.preventDefault();      

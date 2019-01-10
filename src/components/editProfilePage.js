@@ -5,11 +5,6 @@ import {createUserCompanyUpdate} from '../actions';
 
 export class EditProfilePage extends React.Component {
 
-	constructor(props)  {
-
-      super(props);
-    }
-
 	editUserProfile(event) {
 		event.preventDefault();
 

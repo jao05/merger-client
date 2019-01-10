@@ -6,11 +6,6 @@ import ClearBtn from './clearBtn';
 
 export class SellPage extends React.Component {
     
-    constructor(props)  {
-
-      super(props);
-    }
-
     showSellComps(event) {
 
       event.preventDefault();      

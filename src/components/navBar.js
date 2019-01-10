@@ -1,11 +1,10 @@
 // Use to fix landingPage re-route issue
 import { withRouter } from "react-router";
-
 import React from 'react';
 import {connect} from 'react-redux';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import {signUserOut} from '../actions';
-import store from '../store';
+
 import './navBar.css';
 
 

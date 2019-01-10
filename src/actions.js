@@ -1,5 +1,4 @@
 import {API_BASE_URL} from './config';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
 
 // 1a. Action creator to fetch companies interested in merging (async)

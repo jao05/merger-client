@@ -37,6 +37,12 @@ export default class SignUp extends React.Component {
     	this.props.history.push('/home'); 	
     }
 
+    cancelSignUp(event) {
+		event.preventDefault();
+		console.log('CANCELLING....'); // ****************************************
+		this.props.history.push('/');
+	}
+
     render() {
     	return (
 	      <div>
@@ -106,6 +112,7 @@ export default class SignUp extends React.Component {
 		        
 
 		        <button type='Submit'>Submit</button>
+		        <button onClick={e => this.cancelSignUp(e)}>Cancel</button>
 	        </form>        
 	      </div>
     	);

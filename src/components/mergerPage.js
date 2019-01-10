@@ -8,10 +8,7 @@ import './mergerPage.css';
 
 export class MergerPage extends React.Component {
     
-    constructor(props)  {
-
-      super(props);
-    }
+    
 
     showMergerComps(event) {
 
