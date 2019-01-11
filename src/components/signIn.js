@@ -23,8 +23,7 @@ export class SignIn extends React.Component {
         const userSignIn = {
 	    	name: document.getElementById('companyName').value,    
 	    	password: document.getElementById('password').value,
-	    }
-	    console.log(1, userSignIn);	 // ************************************************** 	
+	    }	    
         
         this.props.dispatch(fetchUserForSignIn(userSignIn, ()=>{
             this.props.history.push('/home');
@@ -32,8 +31,6 @@ export class SignIn extends React.Component {
     }
 
     render() {
-    	console.log(this.props.authentication); // ***************                
-
         return (
 	      <div>
 	        <p>{this.props.error}</p>

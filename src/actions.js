@@ -182,8 +182,7 @@ export const createUserCompanyRequest = (signUpData) => dispatch => {
         }
         return res.json();
     })
-    .then(userCompany => {
-        console.log(userCompany); // **************************
+    .then(userCompany => {        
         dispatch(addUserCompanySuccess(userCompany));
     })
     .catch(err => {
@@ -224,18 +223,12 @@ export const fetchUserForSignIn = (signInData, callBack) => dispatch => {
         }
         return res.json();
     })
-    .then(userCompany => {
-        console.log(userCompany); // ***********************************************
+    .then(userCompany => {        
         dispatch(signUserIn(userCompany));
-        callBack();
-        //dispatch(updateAuthInStore({authentication: true}));
-        // this.props.history.push('/home'); **************************
-        
+        callBack();        
     })
-    .catch(err => {
-        console.log(err);  // **********************************************      
-        dispatch(signUserInError('INVALID LOGIN'));
-        //this.props.history.push('/'); *************************************     
+    .catch(err => {        
+        dispatch(signUserInError('INVALID LOGIN'));        
     });
 };
 

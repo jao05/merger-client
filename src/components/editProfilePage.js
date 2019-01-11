@@ -32,7 +32,7 @@ export class EditProfilePage extends React.Component {
 			<div>
 				<form onSubmit={(e) => this.editUserProfile(e)}>
 					<label>Company Name (Username)</label>
-					<input id='editCompanyName'/>
+					<input id='editCompanyName' defaultValue={this.props.user.name}/>
 
 					<label>Location</label>
 					<select id='editLocation'>
@@ -76,7 +76,7 @@ export class EditProfilePage extends React.Component {
 	}
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   
   user: state.user
 }) 
