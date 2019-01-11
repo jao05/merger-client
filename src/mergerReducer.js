@@ -10,7 +10,8 @@ const initialState = {
     sellCompanies: [],
     expertCompanies: [],
     authentication: false,
-    message: null
+    message: null,
+    deleteMsg: null
 };
 
 export const mergerReducer = (state=initialState, action) => {
@@ -119,7 +120,8 @@ export const mergerReducer = (state=initialState, action) => {
     // user: null??????????
     if (action.type === actions.DELETE_USER_COMPANY_SUCCESS) {
         return Object.assign({}, state, {
-            
+            deleteMsg: action.deleteMsg,
+            user: null
         });
     }
 

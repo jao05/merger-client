@@ -10,13 +10,15 @@ export class DeactivatePage extends React.Component {
 		console.log('DEACTIVATING.....'); // ***********************************************
 
 		// Dispatch action to delete/deactivate user
-		// Log user out *********************************************
+		// Log user out by clearing out the state
 		// Redirect back to landing page *********************************
 		const idOfUserToBeDeleted = {
-			id: this.props.user._id			
+			id: this.props.match.params.id			
 		}
-		console.log('ID is...', this.props.user._id); // **********************************************
-		store.dispatch(deleteUserCompanyRequest(idOfUserToBeDeleted));
+		console.log('ID is...', this.props.match.params.id); // **********************************************		
+		store.dispatch(deleteUserCompanyRequest(idOfUserToBeDeleted));		
+		this.props.history.push('/');
+
 	}
 
 

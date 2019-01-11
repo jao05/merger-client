@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import SignUp from './signUp';
+import {SignUp} from './signUp';
 
 
 describe('<SignUp />', () => {

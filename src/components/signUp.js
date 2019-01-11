@@ -13,8 +13,7 @@ export default class SignUp extends React.Component {
     //   super(props);
     // }
 
-    submitSignUp(event) {
-    	console.log('HERE....'); // *******************************
+    submitSignUp(event) {    	
     	event.preventDefault();
 
     	const userSignUp = {

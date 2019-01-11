@@ -45,7 +45,7 @@ export class NavBar extends React.Component {
             <p>Industry: {this.props.user.industry}</p>
             <button onClick={() => this.signOut()}>Sign Out</button>
             <Link to="/editProfile"><button >Edit Profile</button></Link>
-            <button onClick={(e) => this.deactivateAccount(e)}>Deactivate Account</button>
+            <Link to={`/deactivatePage/${this.props.user.id}`}><button >Deactivate Account</button></Link>
           </nav>
         );  
       }

@@ -310,19 +310,20 @@ export const deleteUserCompanyRequest = (deleteData) => dispatch => {
         return res.json();
     })
     .then(userCompany => {
-        console.log('COMPANY WAS DELETED...'); // **************************
-        dispatch(deleteUserCompanySuccess(userCompany));
+        console.log(userCompany.message); // **************************
+        dispatch(deleteUserCompanySuccess(userCompany.message));
     })
     .catch(err => {
+        console.log('ERR IS', err); // **************************
         dispatch(deleteUserCompanyError(err));
     });
 };
 
 
 export const DELETE_USER_COMPANY_SUCCESS = 'DELETE_USER_COMPANY_SUCCESS';
-export const deleteUserCompanySuccess = company => ({
+export const deleteUserCompanySuccess = deleteMsg => ({
     type: DELETE_USER_COMPANY_SUCCESS,
-    company
+    deleteMsg
 });
 
 

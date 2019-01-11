@@ -1,3 +1,4 @@
+import {connect} from 'react-redux';
 import React, { Component } from 'react';
 import './App.css';
 import NavBar from './components/navBar';
@@ -13,12 +14,13 @@ import EditProfilePage from './components/editProfilePage';
 import DeactivatePage from './components/deactivatePage';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 
-class App extends Component {
+export class App extends Component {
   render() {
     return (
       <Router>
       	<div className="app">        
-        	<NavBar />        	
+        	{this.props.user ? <NavBar /> : null}
+                  	
         	<main>        		        
             <Route exact path="/navBar" component={NavBar}/> 
             <Route exact path="/" component={LandingPage}/> 
@@ -30,7 +32,7 @@ class App extends Component {
             <Route exact path="/signIn" component={SignIn}/>
             <Route exact path="/signUp" component={SignUp}/>
             <Route exact path="/editProfile" component={EditProfilePage}/>
-            <Route exact path="/deactivatePage" component={DeactivatePage}/>
+            <Route path="/deactivatePage/:id" component={DeactivatePage}/>
         	</main>        
       	</div>
       </Router>      
@@ -38,4 +40,9 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => ({
+  
+  user: state.user
+}) 
+
+export default connect(mapStateToProps)(App);
