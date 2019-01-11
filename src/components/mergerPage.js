@@ -4,7 +4,6 @@ import {connect} from 'react-redux';
 import {fetchMergerCompanies} from '../actions';
 import store from '../store';
 import ClearBtn from './clearBtn';
-import './mergerPage.css';
 
 export class MergerPage extends React.Component {
     
