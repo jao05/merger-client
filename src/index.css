@@ -55,13 +55,15 @@ select {
 }
 
 
+
+
 @media only screen and (min-width: 320px) {
 	
 	button {	
 		width: 80%;	
 	}
 
-	#potentialMergComps ul {
+	ul {
 		padding-left: 0%;
 	}
 
@@ -79,4 +81,17 @@ select {
 	#clearBtn {
 		width: 80%;
 	}	
+}
+
+
+
+@media only screen and (min-width: 768px) {
+	/*Add styles*/
+	button {	
+		width: 20%;	
+	}
+
+	#clearBtn {	
+		width: 20%;	
+	}
 }

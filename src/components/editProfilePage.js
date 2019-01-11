@@ -34,13 +34,13 @@ export class EditProfilePage extends React.Component {
 		return (
 			<div>
 				<form onSubmit={(e) => this.editUserProfile(e)}>
-					<div class='inputDiv'>
+					<div className='inputDiv'>
 						<label>Company Name (Username)</label>
 						<input id='editCompanyName' defaultValue={this.props.user.name}/>
 					</div>
 					
 
-					<div class='inputDiv'>
+					<div className='inputDiv'>
 						<label>Location</label>
 						<select id='editLocation'>
 					      	<option value="New York">New York</option>
@@ -50,7 +50,7 @@ export class EditProfilePage extends React.Component {
 				        </select>
 					</div>
 					
-					<div class='inputDiv'>
+					<div className='inputDiv'>
 						<label>Industry</label>
 						<select id='editIndustry'>
 					        <option value="Technology">Technology</option>
@@ -61,7 +61,7 @@ export class EditProfilePage extends React.Component {
 					</div>
 			        
 
-			        <div class='inputDiv'>
+			        <div className='inputDiv'>
 			        	<label>Open to Merger</label>
 			        	<select id='editOpenToMerger'>
 						    <option value='true'>Yes</option>
@@ -71,7 +71,7 @@ export class EditProfilePage extends React.Component {
 			        
 					
 
-					<div class='inputDiv'>
+					<div className='inputDiv'>
 						<label>Open to Acquisition</label>
 						<select id='editOpenToAcquisition'>
 						    <option value='true'>Yes</option>
@@ -80,7 +80,7 @@ export class EditProfilePage extends React.Component {
 					</div>
 					
 
-					<div class='inputDiv'>
+					<div className='inputDiv'>
 						<label>Open to Sell</label>
 						<select id='editOpenToSell'>
 						    <option value='true'>Yes</option>
