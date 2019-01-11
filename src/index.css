@@ -57,4 +57,26 @@ select {
 
 @media only screen and (min-width: 320px) {
 	
+	button {	
+		width: 80%;	
+	}
+
+	#potentialMergComps ul {
+		padding-left: 0%;
+	}
+
+	.resultDiv {	
+		width: 90%;	
+	}
+
+	.resultDiv p {	
+		width: 90%;	
+		font-size: 1em;
+		margin: auto;
+		padding: 1%;
+	}
+
+	#clearBtn {
+		width: 80%;
+	}	
 }
