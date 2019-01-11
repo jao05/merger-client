@@ -1,54 +1,102 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-export function MergerPage(props) {
+import {fetchMergerCompanies} from '../actions';
+import store from '../store';
+import ClearBtn from './clearBtn';
+
+export class MergerPage extends React.Component {
     
-    function demoShowComps(event) {
+    
 
-      event.preventDefault();
+    showMergerComps(event) {
 
-      const companies = props.companies.map(company => {
-        console.log(company);
-        return (
+      event.preventDefault();      
 
-            `<div>${company.name} ${company.location} ${company.industry} ${company.profile}</div>`
-          ); 
-      });
-      console.log(companies)
-      document.getElementById("potentialMergComps").innerHTML = companies;
+      let industry = document.getElementById('industry').value;    
 
-    }
+      let location = document.getElementById('location').value;
 
-    return (
-      <div id="mergerPage">
-        <h2>Merger Page Header</h2>
-        <p>Enter search criteria to find companies that are interested in merging.</p>
+      store.dispatch(fetchMergerCompanies(industry, location));
 
-        <form>
-          <label>Label</label>
-          <input/>
+    }    
+    
 
-          <label>Label</label>
-          <input/>
+    render() {
+      const {companies, message} = this.props
+      let companyDivs;
 
-          <label>Label</label>
-          <input/>
+      if(companies && companies.length > 0){
+        companyDivs = this.props.companies.map((company, index) => { // ****index not working properly ******        
+          return ( 
+            <div className='resultDiv' key={index} value={index}>
+              <p>
+                Name: {company.name} 
+                Industry: {company.industry} 
+                Location: {company.location} 
+              </p>
+              <p>
+                Description: {company.description}
+              </p>
+              <p>
+                Contact {company.contact.firstName} {company.contact.lastName} at {company.contact.email} 
+              </p>
+            </div>
+          )
+        });
+      }      
 
-          <label>Label</label>
-          <input/>
+      return (
+        <div id="mergerPage">
+          <h2>Merge</h2>
+          <p>
+            Grow your company by merging with one or more businesses that are similar to yours.
+            Enter search criteria to find companies that are interested in making a deal.
+            Contact those that interest you.
+          </p>          
 
-          <button onClick={demoShowComps}>Search</button>
-        </form>
+          <form>
+            <div className='inputDiv'>
+              <label>Industry</label>
+              <select id='industry'>
+                <option value="Technology">Technology</option>
+                <option value="Financial">Financial</option>
+                <option value="Beauty">Beauty</option>
+                <option value="Health">Health</option>
+              </select>
+            </div>
+            
 
-        <div id="potentialMergComps">Potential Merge Comps</div>
-        <div id="potentialMergCompDetail">Company Details</div>
-      </div>
-    );
+            <div className='inputDiv'>
+              <label>Location</label>
+              <select id='location'>
+                <option value="New York">New York</option>
+                <option value="Atlanta">Atlanta</option>
+                <option value="Memphis">Memphis</option>
+                <option value="San Francisco">San Francisco</option>
+              </select>
+            </div>                      
+
+            <button onClick={this.showMergerComps}>Search</button>
+          </form>
+
+          <div id="potentialMergComps">
+            <p>{message}</p>
+            <ul>{companyDivs}</ul>            
+          </div>
+          
+          <ClearBtn />
+
+          <div id="potentialMergCompDetail"></div>
+        </div>     
+      );  
+    }    
 }
 
-export const mapStateToProps = state => ({
-    
-    companies: state.companies
-});
+const mapStateToProps = state => ({
+  
+  companies: state.mergerCompanies,
+  message: state.message
+}) 
 
 export default connect(mapStateToProps)(MergerPage);

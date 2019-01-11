@@ -1,0 +1,22 @@
+nav {
+	border-bottom: 1px solid gray;
+}
+
+#logo {
+	color: #4257E8;
+	padding-left: 3%;
+	text-align: left;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:visited {
+	color: #4257E8;
+}
+
+p {
+	margin-top: 1%;
+	margin-bottom: 1%;	
+}

@@ -12,3 +12,44 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+h2 {
+	font-size: 2em;
+	margin-top: 5%;
+}
+
+button {
+	color: white;
+	background-color: #4257E8;
+	border: transparent;
+	box-shadow: 5px 5px 8px gray;
+}
+
+button {
+	margin: 10% 5%;
+	width: 20%;
+	padding: 2%;
+	font-size: 1.5em;
+}
+
+button:hover {   
+  width: 25%;
+  padding: 3%;
+  box-shadow: 8px 8px 8px gray;
+}
+
+.inputDiv {
+	margin-top: 5%;
+	font-size: 1.5em;
+}
+
+select {
+	font-size: 1em;
+}
+
+.resultDiv {
+	border: 1px solid black;
+	width: 60%;
+	margin-right: auto;
+	margin-left: auto;
+}

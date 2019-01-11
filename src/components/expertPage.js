@@ -1,35 +1,92 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {fetchExpertCompanies} from '../actions';
+import store from '../store';
+import ClearBtn from './clearBtn';
 
-export default function ExpertPage(props) {
-    return (
-      <div id="expertPage">
-        <h2>Expert Page Header</h2>
-        <p>Get expert help to close your deal.</p>
-        <p>Enter criteria...</p>
+export class ExpertPage extends React.Component {
+    
+    showExperts(event) {
 
-        <form>
-          <label>Label</label>
-          <input />
+      event.preventDefault();      
 
-          <label>Label</label>
-          <input />
+      let type = document.getElementById('type').value;      
 
-          <label>Label</label>
-          <input />
+      let location = document.getElementById('location').value;
 
-          <label>Label</label>
-          <input />
+      store.dispatch(fetchExpertCompanies(type, location));
 
-          <button>Search</button>
-        </form>
+    }
 
-        <div id="selectExpertSection">
-          <p>Select an Expert...</p>
+    render() {
+
+      const {companies, message} = this.props
+      let companyDivs;
+        
+      if(companies && companies.length > 0){
+        companyDivs = this.props.companies.map((company, index) => { // ****index not working properly ******        
+          return ( 
+            <div className='resultDiv' key={index} value={index}>
+              <p>
+                Name: {company.name} 
+                Industry: {company.type} 
+                Location: {company.location} 
+              </p>
+              
+              <p>
+                Contact {company.contact.firstName} at {company.name} 
+              </p>
+            </div>
+          )
+        });
+      }
+
+      return (
+        <div id="expertPage">
+          <h2>Find an Expert</h2>
+          <p>
+            Get expert help to close your deal. Enter criteria to find them and then contact those that interest you.
+          </p>
+          
           <form>
-            <input type="radio" />
-            <button>Choose</button>
+            <div className='inputDiv'>
+              <label>Type</label>
+              <select id='type'>
+                <option value="Legal">Legal</option>
+                <option value="Financial">Financial</option>
+              </select>
+            </div>            
+
+            <div className='inputDiv'>
+              <label>Location</label>
+              <select id='location'>
+                <option value="New York">New York</option>
+                <option value="Boston">Boston</option>
+              </select>
+            </div>                      
+
+            <button onClick={this.showExperts}>Search</button>
           </form>
+
+          <div id="selectExpertSection">            
+            
+            <ul>
+              {message}
+              {companyDivs}              
+            </ul>
+              
+            <ClearBtn />            
+          </div>
         </div>
-      </div>
-    );
+      );  
+    }   
 }
+
+
+const mapStateToProps = state => ({
+  
+  companies: state.expertCompanies,
+  message: state.message
+}) 
+
+export default connect(mapStateToProps)(ExpertPage);

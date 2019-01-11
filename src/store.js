@@ -1,4 +1,17 @@
-import {createStore} from 'redux';
-import {mergerReducer} from './mergerReducer';
+import {createStore, compose, applyMiddleware} from 'redux';
+import thunk from 'redux-thunk';
 
-export default createStore(mergerReducer);
+import {mergerReducer} from './mergerReducer';
+import {loadState, saveState} from './local-storage';
+
+const persistedState = loadState();
+
+const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const store = createStore(mergerReducer, persistedState, composeEnhancer(applyMiddleware(thunk)));
+
+store.subscribe(() => {
+	saveState(store.getState());
+});
+
+export default store;
