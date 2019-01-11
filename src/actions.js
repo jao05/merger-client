@@ -9,8 +9,7 @@ export const fetchMergerCompanies = (industry, location) => dispatch => {
         }
         return res.json();
     })
-    .then(companies => {
-        console.log(companies); // **************************
+    .then(companies => {        
         if(companies.companies.length === 0) {
             dispatch(setMessage('Sorry, no companies fit your criteria.'));    
         }        
@@ -46,8 +45,7 @@ export const fetchAcquisitionCompanies = (industry, location) => dispatch => {
         }
         return res.json();
     })
-    .then(companies => {
-        console.log(companies); // **************************
+    .then(companies => {        
         if(companies.companies.length === 0) {
             dispatch(setMessage('Sorry, no companies fit your criteria.'));    
         }
@@ -83,8 +81,7 @@ export const fetchSellCompanies = (industry, location) => dispatch => {
         }
         return res.json();
     })
-    .then(companies => {
-        console.log(companies); // **************************
+    .then(companies => {        
         if(companies.companies.length === 0) {
             dispatch(setMessage('Sorry, no companies fit your criteria.'));    
         }
@@ -120,8 +117,7 @@ export const fetchExpertCompanies = (type, location) => dispatch => {
         }
         return res.json();
     })
-    .then(companies => {
-        console.log(companies); // **************************
+    .then(companies => {        
         if(companies.companies.length === 0) {
             dispatch(setMessage('Sorry, no companies fit your criteria.'));    
         }
@@ -269,8 +265,7 @@ export const createUserCompanyUpdate = (updateData) => dispatch => {
         }
         return res.json();
     })
-    .then(userCompany => {
-        console.log(userCompany); // **************************
+    .then(userCompany => {        
         dispatch(updateUserCompanySuccess(userCompany));
     })
     .catch(err => {
@@ -309,12 +304,10 @@ export const deleteUserCompanyRequest = (deleteData) => dispatch => {
         }
         return res.json();
     })
-    .then(userCompany => {
-        console.log(userCompany.message); // **************************
+    .then(userCompany => {        
         dispatch(deleteUserCompanySuccess(userCompany.message));
     })
-    .catch(err => {
-        console.log('ERR IS', err); // **************************
+    .catch(err => {        
         dispatch(deleteUserCompanyError(err));
     });
 };
