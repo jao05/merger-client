@@ -10,8 +10,7 @@ import './navBar.css';
 
 export class NavBar extends React.Component {
 
-    signOut = () => {
-      console.log('HERE......'); // ***************************************
+    signOut = () => {      
       this.props.dispatch(signUserOut());
       this.props.history.push('/'); // *** App should redirect to landingPage after user signs out ********
     }
@@ -20,8 +19,7 @@ export class NavBar extends React.Component {
       event.preventDefault();
 
 
-      // Dispatch action
-      console.log('EDITING....'); // ******************************
+      // Dispatch action      
       this.props.history.push('/editProfilePage');
     }
 
