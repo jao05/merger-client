@@ -35,7 +35,7 @@ export class SignIn extends React.Component {
 	      <div>
 	        <p>{this.props.error}</p>
 	        <form>
-	        	<div id='divWrapper'>
+	        	<div id='signInWrapper'>
                     <div className='inputDiv'>
                         <label>Company Name</label>
                         <input id='companyName'/>

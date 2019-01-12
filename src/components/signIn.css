@@ -1,6 +1,11 @@
-.divWrapper {
-	width: 50%;
-	text-align: left;
+form {
+	text-align: center;
+	padding-left: 0px;	
+}
+
+#signInWrapper {
+	width: 50%;	
+	margin: auto;
 }
 
 div {
