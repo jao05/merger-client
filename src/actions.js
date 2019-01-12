@@ -253,7 +253,7 @@ export const updateAuthInStore = autentication => ({
 
 
 export const createUserCompanyUpdate = (updateData) => dispatch => {
-    fetch(`${API_BASE_URL}/userCompany/edit/${updateData.id}`, { // ***updateData.id is undefined *************
+    fetch(`${API_BASE_URL}/userCompany/${updateData.id}`, { // ***updateData.id is undefined *************
         method: 'PUT',
         headers: {
             "Content-Type": "application/json"
