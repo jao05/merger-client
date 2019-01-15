@@ -13,11 +13,15 @@ See a live version [here].(https://guarded-anchorage-26538.herokuapp.com/)
 
 Home Page
 
-![ NSS1.png ](https://github.com/jao05/Negotiator/blob/cleanup-and-final-touches/NSS1.png)
+![ HomePage.png ](https://github.com/jao05/merger-client/blob/master/HomePage.png)
 
 Merger Page
 
+![ MergerPage.png ](https://github.com/jao05/merger-client/blob/master/MergerPage.png)
+
 Search Results
+
+![ DisplayResults.png ](https://github.com/jao05/merger-client/blob/master/DisplayResults.png)
 
 ### Summary
 
