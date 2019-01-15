@@ -27,8 +27,8 @@ export class SellPage extends React.Component {
           return ( 
             <div className='resultDiv' key={index} value={index}>
               <p>
-                Name: {company.name} 
-                Industry: {company.industry} 
+                Name: {company.name}<br>
+                Industry: {company.industry}<br>
                 Location: {company.location} 
               </p>
               <p>

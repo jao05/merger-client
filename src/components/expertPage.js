@@ -28,8 +28,8 @@ export class ExpertPage extends React.Component {
           return ( 
             <div className='resultDiv' key={index} value={index}>
               <p>
-                Name: {company.name} 
-                Industry: {company.type} 
+                Name: {company.name}<br> 
+                Industry: {company.type}<br>
                 Location: {company.location} 
               </p>
               
