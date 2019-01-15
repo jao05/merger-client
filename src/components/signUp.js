@@ -49,13 +49,13 @@ export default class SignUp extends React.Component {
 	        	<section className='companyInfo'>
 	        		<p>Company Info:</p>
 	        		<label>Company Name (Username)</label>
-			        <input id='companyName'/>
+			        <input id='companyName' required/>
 
 			        <label type='password'>Password</label>
-			        <input id='password'/> 
+			        <input id='password' required/> 
 
 			        <label>Location</label>
-			        <select id='location'>
+			        <select id='location' required>
 		              <option value="New York">New York</option>
 		              <option value="Atlanta">Atlanta</option>
 		              <option value="Memphis">Memphis</option>
@@ -63,7 +63,7 @@ export default class SignUp extends React.Component {
 	            	</select>
 
 			        <label>Industry</label>
-			        <select id='industry'>
+			        <select id='industry' required>
 		              <option value="Technology">Technology</option>
 		              <option value="Financial">Financial</option>
 		              <option value="Beauty">Beauty</option>
@@ -72,41 +72,41 @@ export default class SignUp extends React.Component {
 	        	</section>
 	        	
 
-		        <section className='contactInfo'>
+		        <section className='contactInfo' required>
 		        	<p>Contact Person:</p>
 			        <label>First Name</label>
-			        <input id='contactFirstName'/>
+			        <input id='contactFirstName' required/>
 
 			        <label>Last Name</label>
-			        <input id='contactLastName'/>
+			        <input id='contactLastName' required/>
 
 			        <label>Email</label>
-			        <input id='contactEmail'/>
+			        <input id='contactEmail' required/>
 		        </section>
 		        
 
 		        <section className='companyAttributes'>
 		        	<p>Attributes:</p>
 		        	<label>Open to Merger</label>
-			        <select id='openToMerger'>
+			        <select id='openToMerger' required>
 			        	<option value='true'>Yes</option>
 			        	<option value='false'>No</option>
 			        </select>
 
 			        <label>Open to Acquisition</label>
-			        <select id='openToAcquisition'>
+			        <select id='openToAcquisition' required>
 			        	<option value='true'>Yes</option>
 			        	<option value='false'>No</option>
 			        </select>
 
 			        <label>Open to Sell</label>
-			        <select id='openToSell'>
+			        <select id='openToSell' required>
 			        	<option value='true'>Yes</option>
 			        	<option value='false'>No</option>
 			        </select>
 
 			        <label>Company Description</label>
-			        <textarea id='companyDescription' type='text'></textarea>			        
+			        <textarea id='companyDescription' type='text' required></textarea>			        
 		        </section>
 		        
 

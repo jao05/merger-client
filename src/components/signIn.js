@@ -38,12 +38,12 @@ export class SignIn extends React.Component {
 	        	<div id='signInWrapper'>
                     <div className='inputDiv'>
                         <label>Company Name</label>
-                        <input id='companyName'/>
+                        <input id='companyName' required/>
                     </div>
                 
                     <div className='inputDiv'>
                         <label>Password</label>
-                        <input id='password' type='password'/>
+                        <input id='password' type='password' required/>
                     </div>
                 </div>
                   
