@@ -31,8 +31,8 @@ export class MergerPage extends React.Component {
           return ( 
             <div className='resultDiv' key={index} value={index}>
               <p>
-                Name: {company.name}<br>
-                Industry: {company.industry}<br>
+                Name: {company.name}<br/>
+                Industry: {company.industry}<br/>
                 Location: {company.location}
               </p>
               <p>
