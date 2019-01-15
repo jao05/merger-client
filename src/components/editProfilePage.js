@@ -3,7 +3,6 @@ import store from '../store';
 import {connect} from 'react-redux';
 import {createUserCompanyUpdate} from '../actions';
 
-import './editProfilePage.css';
 
 export class EditProfilePage extends React.Component {
 
@@ -18,9 +17,7 @@ export class EditProfilePage extends React.Component {
 		    openToMerger: document.getElementById('editOpenToMerger').value,    
 		    openToAcquisition: document.getElementById('editOpenToAcquisition').value,    
 		    openToSell: document.getElementById('editOpenToSell').value,	    	    
-		}
-		// console.log('ID is...', this.props.user.id); // **********************************************
-		// console.log('ID is...', this.props.user._id); // **********************************************
+		}		
 		store.dispatch(createUserCompanyUpdate(userProfileEdits));
 	}
 

@@ -164,7 +164,7 @@ export const setMessage = (message) => ({
 
 
 
-// #a. Add userCompany********************************************
+// #a. Add userCompany
 export const createUserCompanyRequest = (signUpData) => dispatch => {
     fetch(`${API_BASE_URL}/userCompany`, {
         method: 'POST',
@@ -253,7 +253,7 @@ export const updateAuthInStore = autentication => ({
 
 
 export const createUserCompanyUpdate = (updateData) => dispatch => {
-    fetch(`${API_BASE_URL}/userCompany/${updateData.id}`, { // ***updateData.id is undefined *************
+    fetch(`${API_BASE_URL}/userCompany/${updateData.id}`, { 
         method: 'PUT',
         headers: {
             "Content-Type": "application/json"

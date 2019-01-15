@@ -23,7 +23,7 @@ export class SellPage extends React.Component {
       let companyDivs;
         
       if(companies && companies.length > 0){
-        companyDivs = this.props.companies.map((company, index) => { // ****index not working properly ******        
+        companyDivs = this.props.companies.map((company, index) => { 
           return ( 
             <div className='resultDiv' key={index} value={index}>
               <p>

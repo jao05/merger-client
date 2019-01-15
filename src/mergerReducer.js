@@ -59,14 +59,7 @@ export const mergerReducer = (state=initialState, action) => {
             message: action.message
         }); 
     }
-
-    /*
-    if (action.type === ADD_ITEM) {
-        return Object.assign({}, state, {
-            
-        });
-    }    
-    */
+    
 
 
     /*******DEAL WITH SIGN-IN & SIGN-UP ******************/
@@ -115,9 +108,7 @@ export const mergerReducer = (state=initialState, action) => {
         });
     }
 
-    // How? ***************************************************************
-    // UserCompany.fineAndDelete??
-    // user: null??????????
+    
     if (action.type === actions.DELETE_USER_COMPANY_SUCCESS) {
         return Object.assign({}, state, {
             deleteMsg: action.deleteMsg,

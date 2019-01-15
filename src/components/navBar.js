@@ -12,7 +12,7 @@ export class NavBar extends React.Component {
 
     signOut = () => {      
       this.props.dispatch(signUserOut());
-      this.props.history.push('/'); // *** App should redirect to landingPage after user signs out ********
+      this.props.history.push('/'); 
     }
     
     editProfile = (event) => {

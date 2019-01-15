@@ -6,16 +6,14 @@ import {deleteUserCompanyRequest} from '../actions';
 export class DeactivatePage extends React.Component {
 
 	deactivateUserProfile(event) {
-		event.preventDefault();
-		console.log('DEACTIVATING.....'); // ***********************************************
+		event.preventDefault();		
 
 		// Dispatch action to delete/deactivate user
 		// Log user out by clearing out the state
-		// Redirect back to landing page *********************************
+		// Redirect back to landing page 
 		const idOfUserToBeDeleted = {
 			id: this.props.match.params.id			
-		}
-		console.log('ID is...', this.props.match.params.id); // **********************************************		
+		}		
 		store.dispatch(deleteUserCompanyRequest(idOfUserToBeDeleted));		
 		this.props.history.push('/');
 

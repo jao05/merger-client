@@ -1,8 +1,6 @@
 // This is the first page the user sees and gives the user the option to sign-in or sign-up
 
 import React from 'react';
-// import {connect} from 'react-redux';
-// import store from '../store';
 import {Link} from 'react-router-dom';
 import './landingPage.css';
 
