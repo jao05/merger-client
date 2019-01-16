@@ -2,7 +2,7 @@
 
 ### Demo App
 
-See a live version [here].(https://guarded-anchorage-26538.herokuapp.com/)
+See a live version [here](https://guarded-anchorage-26538.herokuapp.com/).
 
 ### Documentation of your API
 
